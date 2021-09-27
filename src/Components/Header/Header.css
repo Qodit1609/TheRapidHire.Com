@@ -1,0 +1,13 @@
+.navbar .logo {
+  height: 7vh;
+}
+
+#navbarNav .nav-item a {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+/* #navbarNav a.active {
+  background-color:yellow !important;
+} */

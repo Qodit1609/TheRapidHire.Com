@@ -1,0 +1,86 @@
+#contact {
+  padding: 20px 0px;
+}
+#contact .form {
+  padding: 50px;
+}
+#contact .form h2 {
+  font-weight: 600;
+  font-size: 32px;
+  color: #323232;
+}
+#contact .address h2 {
+  font-weight: 600;
+  font-size: 32px;
+  color: #323232;
+}
+#contact .address {
+  padding: 50px;
+  background-color: #1865c7;
+}
+#contact .form-group {
+  padding-top: 20px;
+}
+
+#contact .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#contact .submitbutton button {
+  background: transparent;
+  color: #000 !important;
+  text-align: center;
+  padding: 5px 40px;
+  border-radius: 20px;
+  border: 2px solid #003380;
+  margin: 10px 0px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+#contact .submitbutton button:hover {
+  color: #fff !important;
+  background: #003380;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#contact .list-group-item {
+  position: relative;
+  display: block;
+  padding: 1rem 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+#contact .list-group {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+}
+
+#contact .map img {
+  width: 100%;
+  padding-top: 40px;
+}
