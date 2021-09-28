@@ -197,7 +197,10 @@ svg {
   }
 }
  .read-more-less--more{
-  background: transparent;
+  color: #003380 !important;
+  font-weight: 900;
+}
+.read-more-less--less{
   color: #003380 !important;
   font-weight: 900;
 }

@@ -162,9 +162,12 @@
 }
 
 #about .read-more-less--more{
-  background: transparent;
   color: #003380 !important;
   font-weight: 900;
 }
 
+#about .read-more-less--less{
+  color: #003380 !important;
+  font-weight: 900;
+}
 
