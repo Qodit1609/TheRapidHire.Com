@@ -1,4 +1,5 @@
 import React from "react";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
@@ -15,6 +16,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 const About = () => {
+  const Our_Vision =
+  "  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1700s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+  
+  const Our_Mission =
+  "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. TheRapidHire has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
+  
+  const Values3 =
+  " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1700s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+  
+
   return (
     <div id="about">
       <Header />
@@ -122,11 +133,15 @@ const About = () => {
                 <img src={Vision} alt="Vision" className="img-fluid" />
                 <h3>Our Vision</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <ReactReadMoreReadLess
+        charLimit={70}
+        readMoreText={"Read more "}
+        readLessText={"Read less "}
+        readMoreClassName="read-more-less--more"
+        readLessClassName="read-more-less--less"
+      >
+        {Our_Vision}
+      </ReactReadMoreReadLess>
                 </p>
               </div>
             </div>
@@ -135,11 +150,15 @@ const About = () => {
                 <img src={Mission} alt="Mision" className="img-fluid" />
                 <h3>Our Mission</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <ReactReadMoreReadLess
+        charLimit={70}
+        readMoreText={"Read more "}
+        readLessText={"Read less "}
+        readMoreClassName="read-more-less--more"
+        readLessClassName="read-more-less--less"
+      >
+        {Our_Mission}
+      </ReactReadMoreReadLess>
                 </p>
               </div>
             </div>
@@ -148,11 +167,15 @@ const About = () => {
                 <img src={Values} alt="Value" className="img-fluid" />
                 <h3>Values</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <ReactReadMoreReadLess
+        charLimit={70}
+        readMoreText={"Read more "}
+        readLessText={"Read less "}
+        readMoreClassName="read-more-less--more"
+        readLessClassName="read-more-less--less"
+      >
+        {Values3}
+      </ReactReadMoreReadLess>
                 </p>
               </div>
             </div>

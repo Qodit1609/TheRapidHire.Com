@@ -196,3 +196,8 @@ svg {
     padding-top: 30px;
   }
 }
+ .read-more-less--more{
+  background: transparent;
+  color: #003380 !important;
+  font-weight: 900;
+}

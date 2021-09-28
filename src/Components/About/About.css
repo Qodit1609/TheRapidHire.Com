@@ -160,3 +160,11 @@
   color: #fff;
   background: #003380;
 }
+
+#about .read-more-less--more{
+  background: transparent;
+  color: #003380 !important;
+  font-weight: 900;
+}
+
+

@@ -3,11 +3,14 @@
 }
 
 #navbarNav .nav-item a {
+  color: black;
   text-transform: uppercase;
   font-weight: 600;
   margin-right: 20px;
 }
 
-/* #navbarNav a.active {
-  background-color:yellow !important;
-} */
+#navbarNav .active{
+  color: #46B9EC !important;
+  border-bottom: 2px solid #46B9EC;  
+}
+
