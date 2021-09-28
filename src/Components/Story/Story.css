@@ -176,6 +176,12 @@ svg {
   .serviceBox {
     margin: 0 0 30px;
   }
+  .tabular {
+    padding: 0px 0px;
+  }
+  .nav-tabs .nav-item {
+    padding: 0px 0px;
+}
 }
 
 .cols {
@@ -184,7 +190,7 @@ svg {
 
 @media only screen and (max-width: 450px) {
   .tabular {
-    padding: 0px 40px;
+    padding: 0px 0px;
   }
   .nav-tabs .nav-item {
     padding: 0px 0px;

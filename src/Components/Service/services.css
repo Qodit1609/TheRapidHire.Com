@@ -111,7 +111,7 @@
   background: #003380;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 990px) {
   #services .web-head h3 {
     font-weight: bolder;
     text-transform: uppercase;
@@ -125,9 +125,46 @@
   #services .web-head button {
     margin: 0px 10px;
   }
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+
+  html:not(.no-js) [data-aos^=fade][data-aos^=fade] {
+    opacity: 1 !important;
+  }
+
+  html:not(.no-js) [data-aos=fade-right],html:not(.no-js) [data-aos=fade-left] {
+    transform: none !important;
+  }
+
+  #services .web-img {
+    border-radius: 30px;
+    height: 400px;
+    padding: 30px;
+}
+
 }
 @media only screen and (min-width: 767px) {
   #services .sec-service {
     padding: 10px 0px 0px 0px;
   }
+}
+
+@media only screen and (max-width: 450px) {
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+
+  html:not(.no-js) [data-aos^=fade][data-aos^=fade] {
+    opacity: 1 !important;
+  }
+
+  html:not(.no-js) [data-aos=fade-right],html:not(.no-js) [data-aos=fade-left] {
+    transform: none !important;
+  }
+  #services .web-img {
+    border-radius: 30px;
+    height: 300px;
+    padding: 30px;
+}
 }

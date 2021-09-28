@@ -349,3 +349,24 @@
   border: none;
   box-shadow: 5px 5px 10px #1f1f1fa8, -5px -5px 10px #1f1f1fa8;
 }
+
+
+@media only screen and (max-width: 450px) {
+  #team_child .home-info-grey h2 {
+    text-align: center;
+  }
+  #team_child .col-md-7 {
+    padding-top: 35px;
+    margin-top: 0px;
+}
+  }
+  
+  @media only screen and (max-width: 990px) {
+    #team_child .home-info-grey h2 {
+      text-align: center;
+    }
+    #team_child .col-md-7 {
+      padding-top: 35px;
+      margin-top: 0px;
+  }
+    }

@@ -29,12 +29,13 @@ flip card
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: transparent;
   background-clip: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   border-left: none;
   width: 100%;
   border-right: none;
+  margin-top: 1rem;
   /* border-radius: .25rem; */
 }
 #features .card-flip > div {

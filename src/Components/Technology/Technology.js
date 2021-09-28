@@ -102,7 +102,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 second_tech">
+        <div className="col-lg-6 col-md-12 col-sm-6 second_tech">
           <div className="content1 cont1 ">
             <img src={planning3} class="img-fluid" width="40px" height="50px" alt="img"/>
             <h3>MOBILE
@@ -141,7 +141,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 second_tech1 ">
+        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
           <div className="content1 cont1 " >
             <img src={planning4} class="img-fluid" width="40px" height="50px" alt="img"/>
             <h3>WEB
@@ -180,7 +180,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 second_tech1 ">
+        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
           <div className="content1 cont1 ">
             <img src={planning5} class="img-fluid" alt="img"/>
             <h3>DATABASE MANAGEMENT
@@ -219,7 +219,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-6 second_tech1 ">
+        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
           <div className="content1 cont1 ">
             <img src={planning6} class="img-fluid" width="40px" height="50px" alt="img"/>
             <h3>CLOUD

@@ -36,3 +36,12 @@
   filter: grayscale(100%);
   transition: all 0.3s;
 }
+
+
+@media (max-width: 450px) {
+  #compony {
+    /* background-color: whitesmoke; */
+    padding: 30px 30px;
+  }
+}
+

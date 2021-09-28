@@ -213,7 +213,7 @@ const Technology_child = () => {
       <section className="technlogy2 pb-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-4 Services-tab item">
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   <img src={java1} className="image1" width="60px" height="50px" />
@@ -233,7 +233,7 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   {" "}
@@ -254,7 +254,7 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   {" "}
@@ -275,10 +275,10 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-          </div>
+         
 
-          <div className="row">
-            <div className="col-md-4 Services-tab item">
+         
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   <img src={java5} className="image1" width="30px" height="30px" />
@@ -298,7 +298,7 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   {" "}
@@ -316,7 +316,7 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
+            <div className="col-md-6 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
                   {" "}
