@@ -21,7 +21,7 @@ const Features = () => {
           <div className="row">
             <div className="col-md-3 col-sm-6">
               <div className="card card-flip">
-                <div className="card-front" style={{ backgroundColor: "skyblue" }}>
+                <div className="card-front" style={{ backgroundColor: "#9D9D9E" }}>
                   <div className="card-body">
                     {/* <i className="fa fa-search fa-5x float-right"></i> */}
                     <img className="card-title" src={features1} />
@@ -44,7 +44,7 @@ const Features = () => {
               <div className="card card-flip h-100">
                 <div
                   className="card-front text-white"
-                  style={{ backgroundColor: "#20b2aa" }}
+                  style={{ backgroundColor: "#00A3E8" }}
                 >
                   <div className="card-body">
                     <img className="card-title" src={features2} />
@@ -68,7 +68,7 @@ const Features = () => {
               <div className="card card-flip h-100">
                 <div
                   className="card-front text-white"
-                  style={{ backgroundColor: "skyblue" }}
+                  style={{ backgroundColor: "#9D9D9E" }}
                 >
                   <div className="card-body">
                     <img className="card-title" src={features3} />
@@ -92,7 +92,7 @@ const Features = () => {
               <div className="card card-flip h-100">
                 <div
                   className="card-front text-white"
-                  style={{ backgroundColor: "#20b2aa" }}
+                  style={{ backgroundColor: "#00A3E8" }}
                 >
                   <div className="card-body">
                     <img className="card-title" src={features4} />

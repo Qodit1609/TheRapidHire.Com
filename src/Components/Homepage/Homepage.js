@@ -9,17 +9,17 @@ import Technology from "../Technology/Technology";
 import Compony from "../Compony/Compony";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-import Testimonial from "../Testimonial/Testimonial";
+import Career from "../Career/Career";
 
 const HomePage = () => {
   return (
     <div className="homepage">
-      <Header />
+      <Header />  
       <Sliders />
       <Story />
       <LifeCycle />
-      <Features />
       <Technology />
+      <Features />
       <Compony />
       <Team />
       {/* <Testimonial /> */}

@@ -29,11 +29,15 @@ return(
           </NavLink>
         </li>
         <li class="nav-item">
-          <NavLink  exact activeClassName="active" to="Technology">Technology
+          <NavLink  exact activeClassName="active" to="technology">Technology
           </NavLink>
         </li>
         <li class="nav-item">
           <NavLink  exact activeClassName="active" to="team">Team
+          </NavLink>
+        </li>
+        <li class="nav-item">
+          <NavLink  exact activeClassName="active" to="career">Careers
           </NavLink>
         </li>
         <li class="nav-item">

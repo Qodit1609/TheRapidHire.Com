@@ -1,12 +1,11 @@
 #technology {
-
-    padding: 30px 100px;
+    padding: 60px 100px;
 }
 #technology .content{
     text-align: center;
 }
 #technology h2{
-    font-weight: 600;
+    font-weight: 500;
     font-size: 32px;
     color: #323232;
 }
@@ -14,14 +13,16 @@
     font-size: 18px;
     line-height: 30px;
     color: #323232;
+    font-weight: 300;
+    padding-bottom: 50px;
 }
 #technology .content1{
     display: flex;
 }
-.contents{
+#technology .contents{
     padding-top: 100px;
 }
-.contents h3{
+#technology .contents h3{
     margin-left: 1rem;
     font-weight: 600;
     font-size: 30px;
@@ -34,67 +35,54 @@
    border-top-right-radius: 10px;
   
 }
-.lang{
-    background-color: #f1f8ff; 
-    display: flex;
-     height: auto;
-     border-bottom-left-radius: 10px;
-     border-bottom-right-radius: 10px;
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 20))}
 }
 
-.lang .list li{
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-    border-radius: 5px;
-    padding: 5px 17px;
-    background-color: transparent;
-    border: 1px solid teal;
+#technology .slider {
+	height: 100px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: auto;
 }
-
-.lang .list li a{
-  color: black;
-  text-decoration: none;
-}
-.lang .list li:hover{
-    background-color: skyblue;
-}
-
-.second_tech{
-    margin-top: 1rem;
-}
-.first_tech{
-  margin-top: 1rem;
-}
-.second_tech1{
-    margin-top: 1rem;
-}
-
+	
+#technology .slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(250px * 31);
+	}
+    #technology	.slide {
+		height: 100px;
+		width: 250px;
+	}
 
 @media only screen and (max-width: 450px) {
     #technology {
         background-color: whitesmoke;
         padding: 30px 30px;
     }
-    .contents{
+    #technology .contents{
         padding-top: 20px;
     }
     #technology .contents .cont1{
        margin-top: 1rem;
      }
-     .content1 h3{
+     #technology .content1 h3{
         font-size: 20px;
     }
-    .lang{
-         margin-top: 0.5rem;
-    }
+  
 }
 @media only screen and (max-width: 800px) {
-    .content1 h3{
+    #technology .content1 h3{
         font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 800px) {
-    .content1 h3{
+    #technology .content1 h3{
         font-size: 20px;
     }
 }

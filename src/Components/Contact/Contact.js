@@ -18,13 +18,42 @@ const Contact = () => {
   };
   return (
     <div id="contact">
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container">
+      <div class="nio-eig-contact-content position-relative">
+				<div class="row">
+					<div class="col-lg-6 wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1000ms">
+						<div class="nio-eig-contact-form-wrap headline">
+							<h3>Contact Us Today and
+							Get a Free Consultation!</h3>
+							<div class="nio-eig-contact-area">
+								<form action="#" method="post">
+									<div class="nio-eig-contact-input d-flex">
+										<input type="text" name="name" placeholder="Your name*"/>
+										<input type="email" name="email" placeholder="Email"/>
+									</div>
+									<textarea placeholder="Text..."></textarea>
+									<button type="submit">Get a Quote <i class="fas fa-arrow-right"></i></button>
+								</form>
+								<div class="contact-bottom-cta">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1000ms" >
+						<div class="nio-eig-contact-img position-relative">
+							<div class="nio-eig-contact-img-wrap">
+								<img src={addressMap} class="img-fluid" alt=""/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        {/* <div className="row">
           <div className="col-lg-6 col-sm-12 form">
             <h2>Let's Talk About Your Idea</h2>
             <form onSubmit={sendEmail}>          
               <div className="form-group">
-                <input
+                <input  
                   type="text"
                   className="form-control"
                   id=""
@@ -85,7 +114,7 @@ const Contact = () => {
               <ul className="list-group">
                 <li className="list-group-item">
                   <i className=" fas fa-envelope-open"></i>
-                </li>
+                </li>   
                 <li className="list-group-item">sales@therapidhire.com</li>
               </ul>
             </div>
@@ -93,7 +122,7 @@ const Contact = () => {
               <img src={addressMap} alt="map" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

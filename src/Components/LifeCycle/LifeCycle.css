@@ -2,21 +2,23 @@ a {
   text-decoration: none !important;
 }
 #lifecycle h2 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 32px;
   color: #323232;
 }
 #lifecycle {
-  padding: 30px 100px;
+  padding: 50px 100px;
+  background-color: whitesmoke;
 }
 
 #lifecycle p {
   font-size: 18px;
   line-height: 30px;
   color: #323232;
+  font-weight: 200;
 }
 .toggeler {
-  padding-top: 80px;
+  padding-top: 40px;
   text-align: left;
 }
 .main_contain {
@@ -88,7 +90,7 @@ a:focus {
   display: block;
   width: 100%;
   height: 100%;
-  background: cadetblue;
+  background: #00A3E8;
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +101,7 @@ a:focus {
   display: block;
   padding: 15px 70px 15px 20px;
   margin: 0;
-  background: cadetblue;
+  background: #00A3E8;
   font-size: 18px;
   font-weight: 700;
   color: #fff;

@@ -7,50 +7,11 @@ const Footer = () => {
     <div id="footer">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-4 col-sm-6">
+          <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
               <ul>
                 <li>
-                  <h3>Services</h3>
-                </li>
-                <li>
-                  <Link to="/team">
-                    <i className="fas fa-angle-right"></i>
-                    Dedicated Teams
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Web Devlopment
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    IT & Database
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    App Developers
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Web Design
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-4 col-sm-6">
-            <div className="footer_content">
-              <ul>
-                <li>
-                  <h3>Quick Link</h3>
+                  <h3>Company</h3>
                 </li>
                 <li>
                   <Link to="/">
@@ -67,7 +28,7 @@ const Footer = () => {
                 <li>
                   <Link to="/Technology">
                     <i className="fas fa-angle-right"></i>
-                    Company History
+                    Technology
                   </Link>
                 </li>
                 <li>
@@ -85,7 +46,103 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-lg-4 col-sm-6">
+          <div className="col-lg-3 col-sm-6">
+            <div className="footer_content">
+              <ul>
+                <li>
+                  <h3>Services</h3>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <i className="fas fa-angle-right"></i>
+                    System Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <i className="fas fa-angle-right"></i>
+                    Web Devlopment
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <i className="fas fa-angle-right"></i>
+                    Data Engineering
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <i className="fas fa-angle-right"></i>
+                    Cloud Service
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <i className="fas fa-angle-right"></i>
+                    Web Designer
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6">
+            <div className="footer_content">
+              <ul>
+                <li>
+                  <h3>General Link</h3>
+                </li>
+                <li>
+                  <Link to="#">
+                    <i className="fas fa-angle-right"></i>
+                    Terms & Condition
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#">
+                    <i className="fas fa-angle-right"></i>
+                    Privacy policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact_child">
+                    <i className="fas fa-angle-right"></i>
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+              <div class="footer-social-icn">
+                <li>
+                  <a
+                    href="https://www.facebook.com/The-Rapid-Hire-Pvt-Ltd-103302021496799/?modal=admin_todo_tour"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank" rel="nofollow">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/therapidhire/"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank" rel="nofollow">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
               <ul>
                 <li>
@@ -121,6 +178,22 @@ const Footer = () => {
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <div class="container">
+          <div class="copyright">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <p>
+                    © 2021 The Rapid Hire Pvt. Ltd{" "}
+                    <span> All Rights Reserved.</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

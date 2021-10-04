@@ -1,259 +1,151 @@
 import React from "react";
 import "./Technology.css";
-import planning from "../../assets/images/language.png";
-import planning2 from "../../assets/images/FRAMEWORKS.png";
-import planning3 from "../../assets/images/MOBILE.png";
-import planning4 from "../../assets/images/WEB5.png";
-import planning5 from "../../assets/images/DATABASE_MANAGEMENT.png";
-import planning6 from "../../assets/images/CLOUD5.png";
+import tech from "../../assets/images/673479.png";
+import tech1 from "../../assets/images/angular.png";
+import tech2 from "../../assets/images/azure.png";
+import tech3 from "../../assets/images/bootstrap.png";
+import tech4 from "../../assets/images/cloud-tech.png";
+import tech5 from "../../assets/images/DatabaseMange.png";
+import tech6 from "../../assets/images/ember.png";
+import tech7 from "../../assets/images/firebase.png";
+import tech8 from "../../assets/images/google_cloud.png";
+import tech9 from "../../assets/images/iot.png";
+import tech10 from "../../assets/images/it&database.png";
+import tech11 from "../../assets/images/java-icon.png";
+import tech12 from "../../assets/images/jquery.png";
+import tech13 from "../../assets/images/jurlogo.jpg";
+import tech14 from "../../assets/images/k.png";
+import tech15 from "../../assets/images/k1.png";
+import tech16 from "../../assets/images/k3.png";
+import tech17 from "../../assets/images/k5.png";
+import tech18 from "../../assets/images/k7.png";
+import tech19 from "../../assets/images/machine-learning.png";
+import tech20 from "../../assets/images/mango-db.png";
+import tech21 from "../../assets/images/newphp.png";
+import tech22 from "../../assets/images/mern.png";
+import tech23 from "../../assets/images/node.png";
+import tech24 from "../../assets/images/p1.png";
+import tech25 from "../../assets/images/R.png";
+import tech26 from "../../assets/images/react.png";
+import tech27 from "../../assets/images/salesforce.png";
+import tech28 from "../../assets/images/shopify.png";
+import tech29 from "../../assets/images/soacket.png";
+import tech30 from "../../assets/images/vue.png";
+import tech31 from "../../assets/images/wordpress.png";
+
 const Technology = () => {
-return (
-<div id="technology">
-  <div className="cotainer-fluid content">
-    <h2>QUICK SOFTWARE OVERVIEW
-    </h2>
-    <p>
-      A designer knows he has achieved perfection not when there is nothing
-      left to add, but when there is nothing left to take away.” By using
-      the best tools and technique we always try to give the best results...
-      game completely.
-    </p>
-    <div className="contents">
-      <div className="row ">
-        <div className="col-lg-6 col-sm-12 first_tech">
-          <div className="content1 cont1 ">
-            <img src={planning} class="img-fluid" width="40px" height="50px" alt="img"/>
-            <h3>Language
-            </h3>
-          </div>
-          <div className="lang">
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Java
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">C#
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">C/C++
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Python
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">PHP
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Java Script
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Type Script
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-lg-6 col-sm-12 first_tech">
-          <div className="content1 cont1 ">
-            <img src={planning2} class="img-fluid" width="40px" height="50px" alt="img"/>
-            <h3>FRAMEWORKS
-            </h3>
-          </div>
-          <div className="lang">
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Spring
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">React js
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">DJango
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Express
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Node js
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Angular
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">React Native
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">.Net
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-12 col-sm-6 second_tech">
-          <div className="content1 cont1 ">
-            <img src={planning3} class="img-fluid" width="40px" height="50px" alt="img"/>
-            <h3>MOBILE
-            </h3>
-          </div>
-          <div className="lang">
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">iOS
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">React js
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Android
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">HTML5
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Bootstrap
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">JavaScript
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">React Native
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
-          <div className="content1 cont1 " >
-            <img src={planning4} class="img-fluid" width="40px" height="50px" alt="img"/>
-            <h3>WEB
-            </h3>
-          </div>
-          <div className="lang">
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Spring
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">React js
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Angular
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Express
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Node js
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">.Net
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Python
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
-          <div className="content1 cont1 ">
-            <img src={planning5} class="img-fluid" alt="img"/>
-            <h3>DATABASE MANAGEMENT
-            </h3>
-          </div>
-          <div className="lang">
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">NoSQL
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">MySQL
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Oracle SQL
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">PostgreSQL
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Microsoft SQL
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">MongoDb
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Firebase
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-12 col-sm-6 second_tech1 ">
-          <div className="content1 cont1 ">
-            <img src={planning6} class="img-fluid" width="40px" height="50px" alt="img"/>
-            <h3>CLOUD
-            </h3>
-          </div>
-          <div className="lang" >
-            <ul class="list" style={{textDecoration: "none"}}>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Amazon Web Services (AWS
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Google Cloud
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Oracle Cloud
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Microsoft Azure
-                </a>
-              </li>
-              <li style={{display: "inline-block", paddingLeft: "20px"}}>
-                <a href="#">Socket
-                </a>
-              </li>
-            </ul>
+  return (
+    <div id="technology">
+      <div className="cotainer-fluid content">
+        <h2>QUICK SOFTWARE OVERVIEW</h2>
+        <p>
+          A designer knows he has achieved perfection not when there is nothing
+          left to add, but when there is nothing left to take away.” By using
+          the best tools and technique we always try to give the best results...
+          game completely.
+        </p>
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <img src={tech} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech1} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech2} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech3} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech4} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech5} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech6} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech7} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech8} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech9} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech10} height="70" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech11} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech12} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech13} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech14} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech15} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech16} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech17} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech18} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech19} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech20} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech21} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech22} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech23} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech24} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech25} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech26} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech27} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech28} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech29} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech30} height="100" width="150" alt="" />
+            </div>
+            <div class="slide">
+              <img src={tech31} height="100" width="150" alt="" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-);
+  );
 };
 export default Technology;

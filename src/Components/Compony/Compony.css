@@ -6,7 +6,7 @@
   text-align: center;
 }
 #compony h2 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 32px;
   color: #323232;
 }
@@ -14,9 +14,10 @@
   font-size: 18px;
   line-height: 30px;
   color: #323232;
+  font-weight: 300;
 }
 
-.componies {
+#compony .componies {
   padding: 30px;
   border: 1px solid #cecece;
   align-items: center;
@@ -28,10 +29,10 @@
   box-shadow: 0 0 10px #ccc;
   background-color: #edf5ff;
 }
-.compony_row {
+#compony .compony_row {
   padding-top: 30px;
 }
-.componies img {
+#compony .componies img {
   max-width: 100%;
   filter: grayscale(100%);
   transition: all 0.3s;

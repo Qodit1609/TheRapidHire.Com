@@ -1,5 +1,5 @@
 #features h2 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 32px;
   color: #323232;
 }
@@ -12,12 +12,14 @@
   font-size: 18px;
   line-height: 30px;
   color: #323232;
+  font-weight: 500;
 }
 #features .content {
   text-align: center;
 }
 #features .cards {
-  padding-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 /*
@@ -31,8 +33,9 @@ flip card
   word-wrap: break-word;
   background-color: transparent;
   background-clip: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
-  border-left: none;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: none; */
+  border: none !important;
   width: 100%;
   border-right: none;
   margin-top: 1rem;
@@ -47,6 +50,7 @@ flip card
   margin: 0;
   display: flex;
   border-radius: 20px;
+  background-color: #000;
 }
 
 #features .card-front {
