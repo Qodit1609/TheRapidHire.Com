@@ -27,7 +27,7 @@ const Services = () => {
                 We provide industry-specific and need-based services, which
                 allows us to deliver tailor-made solutions. We serve customers
                 ranging from small individual startups to big corporate houses.
-              </p>{" "}
+              </p>
             </div>
           </div>
         </div>

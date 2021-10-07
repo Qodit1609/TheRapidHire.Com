@@ -10,6 +10,8 @@ import Team_child from "./Components/Teams/Team_child";
 import Technology_child from "./Components/Technologys/Technology_child";
 import Career from "./Components/Career/Career";
 import Apply from "./Components/Apply/Apply";
+import Terms from "./Components/Terms/Terms";
+import Policy from "./Components/Policy/Policy";
 
 function App() {
   let [loaded, setLoaded] = useState(true);
@@ -30,21 +32,15 @@ function App() {
           <Router>
             <Route exact path="/" component={HomePage}></Route>
             <Route exact path="/services" component={Services}></Route>
-            <Route
-              exact
-              path="/contact_child"
-              component={Contact_child}
-            ></Route>
+            <Route exact path="/contact_child" component={Contact_child}></Route>
             <Route exact path="/about" component={About}></Route>
             <Route path="/features" component={Features_Child}></Route>
             <Route exact path="/Team" component={Team_child}></Route>
             <Route exact path="/career" component={Career}></Route>
             <Route exact path="/apply" component={Apply}></Route>
-            <Route
-              exact
-              path="/technology"
-              component={Technology_child}
-            ></Route>
+            <Route exact path="/terms" component={Terms}></Route>
+            <Route exact path="/policy" component={Policy}></Route>
+            <Route exact path="/technology"component={Technology_child}></Route>
           </Router>
         </div>
       )}

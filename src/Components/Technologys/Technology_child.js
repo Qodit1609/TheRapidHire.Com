@@ -2,8 +2,8 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Technology_child.css";
-import Ricon from "../../assets/images/webdesigner.png";
-import webdesin from "../../assets/images/techno.jpg";
+import Ricon from "../../assets/images/illustration.png"
+import webdesign from "../../assets/images/techno.jpg";
 import Ricon2 from "../../assets/images/jquery.png";
 import Ricon3 from "../../assets/images/vue.png";
 import Ricon4 from "../../assets/images/bootstrap.png";
@@ -12,7 +12,6 @@ import java1 from "../../assets/images/javaicon.png";
 import java2 from "../../assets/images/php4.png";
 import java3 from "../../assets/images/mango-db.png";
 import java4 from "../../assets/images/wordpress.png";
-import java5 from "../../assets/images/m.png";
 import java6 from "../../assets/images/iot.png";
 import iot1 from "../../assets/images/azure.png";
 import iot2 from "../../assets/images/cloud-tech.png";
@@ -22,7 +21,7 @@ import iot5 from "../../assets/images/google_cloud.png";
 import iot6 from "../../assets/images/k.png";
 import iot7 from "../../assets/images/k1.png";
 import technology2 from "../../assets/images/k3.png";
-  import technology3 from "../../assets/images/k5.png";
+import technology3 from "../../assets/images/k5.png";
 import technology4 from "../../assets/images/k7.png";
 import technology5 from "../../assets/images/mern.png";
 import technology6 from "../../assets/images/no-sql.png";
@@ -45,7 +44,7 @@ const Technology_child = () => {
                 Technology is transforming the way we buy, sell, and do
                 everything. We help clients unlock potential and fuel growth
                 with software development services.
-              </p>{" "}
+              </p>
             </div>
           </div>
         </div>
@@ -68,10 +67,10 @@ const Technology_child = () => {
             </div>
             <div className="col-md-5 drop-cap-text">
               <img
-                src={webdesin}
+                src={webdesign}
                 className="iamge2 img-fluid"
                 data-aos="fade-left"
-                data-aos-delay="50"
+                data-aos-delay="100"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out-cubic"
               />
@@ -79,7 +78,6 @@ const Technology_child = () => {
           </div>
         </div>
       </section>
-      {/* section our */}
       <section className="icon3">
         <div className="container rounded">
           <div className="h1 fw-bold text-center mt-2">OUR EXPERTISE </div>
@@ -93,64 +91,133 @@ const Technology_child = () => {
             <div className="wrapper">
               <div className="items-container roll-LL">
                 <div className="item">
-                  <img src={java1} className="image1" width="70px" height="50px" />
+                  <img
+                    src={java1}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={java2} className="image1" width="70px" height="50px" />
+                  <img
+                    src={java2}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={java3} className="image1" width="70px" height="50px" />
+                  <img
+                    src={java3}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={java4} className="image1" width="70px" height="50px" />
+                  <img
+                    src={java4}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={java5} className="image1" width="70px" height="50px" />
-                </div>
-                <div className="item">
-                  <img src={java6} className="image1" width="70px" height="50px" />
+                  <img
+                    src={java6}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
               </div>
               <div className="items-container roll-RL">
                 <div className="item">
-                  <img src={iot1} className="image1" width="70px" height="50px" />
+                  <img
+                    src={iot1}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={iot2} className="image1" width="70px" height="50px" />
+                  <img
+                    src={iot2}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
                   <img src={iot3} className="image1" />
                 </div>
                 <div className="item">
-                  <img src={iot4} className="image1" width="70px" height="50px" />
+                  <img
+                    src={iot4}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={iot5} className="image1" width="60px" height="50px" />
+                  <img
+                    src={iot5}
+                    className="image1"
+                    width="150px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={iot6} className="image1" width="70px" height="50px" />
+                  <img
+                    src={iot6}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
               </div>
             </div>
             <div className="wrapper">
               <div className="items-container reverse-roll-LL">
                 <div className="item">
-                  <img src={iot7} className="image1" width="70px" height="50px" />
+                  <img
+                    src={iot7}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={Ricon2} className="image1" width="70px" height="50px" />
+                  <img
+                    src={Ricon2}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={Ricon3} className="image1" width="70px" height="50px" />
+                  <img
+                    src={Ricon3}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={Ricon4} className="image1" width="70px" height="50px" />
+                  <img
+                    src={Ricon4}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
                 <div className="item">
-                  <img src={Ricon5} className="image1" width="70px" height="50px" />
-                </div>
-                <div className="item">
-                  <img src={Ricon} className="image1" width="70px" height="50px" />
+                  <img
+                    src={Ricon5}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                 </div>
               </div>
               <div className="items-container reverse-roll-RL">
@@ -158,48 +225,48 @@ const Technology_child = () => {
                   <img
                     src={technology2}
                     className="image1"
-                    width="70px"
-                    height="50px"
+                    width="100px"
+                    height="80px"
                   />
                 </div>
                 <div className="item">
                   <img
                     src={technology3}
                     className="image1"
-                    width="70px"
-                    height="50px"
+                    width="100px"
+                    height="80px"
                   />
                 </div>
                 <div className="item">
                   <img
                     src={technology4}
                     className="image1"
-                    width="70px"
-                    height="50px"
+                    width="100px"
+                    height="80px"
                   />
                 </div>
                 <div className="item">
                   <img
                     src={technology5}
                     className="image1"
-                    width="60px"
-                    height="50px"
+                    width="130px"
+                    height="80px"
                   />
                 </div>
                 <div className="item">
                   <img
                     src={technology6}
                     className="image1"
-                    width="70px"
-                    height="50px"
+                    width="100px"
+                    height="80px"
                   />
                 </div>
                 <div className="item">
                   <img
                     src={technology7}
                     className="image1"
-                    width="70px"
-                    height="50px"
+                    width="100px"
+                    height="80px"
                   />
                 </div>
               </div>
@@ -208,20 +275,22 @@ const Technology_child = () => {
           </div>
         </div>
       </section>
-      {/*  */}
-
       <section className="technlogy2 pb-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  <img src={java1} className="image1" width="60px" height="50px" />
+                  <img
+                    src={java1}
+                    className="image1"
+                    width="60px"
+                    height="80px"
+                  />
                   <p className="item-title">
                     <h3> Java</h3>
                   </p>
                   <p>
-                    {" "}
                     Experience in core Java advanced programming,Experience in
                     Spring Hibernate is mandatory.Experience in building
                     mechanisms like Maven.Good knowledge on design patterns and
@@ -233,16 +302,19 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  {" "}
-                  <img src={java3} className="image1" width="60px" height="50px" />
+                  <img
+                    src={java3}
+                    className="image1"
+                    width="60px"
+                    height="80px"
+                  />
                   <p className="item-title">
                     <h3> Mango-DB</h3>
                   </p>
                   <p>
-                    {" "}
                     Our company is looking for a talented Magento 1 and/or 2
                     developer that will be in charge of maintaining our
                     eCommerce website. Your main tasks will be to ensure that
@@ -254,39 +326,46 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  {" "}
-                  <img src={java2} className="image1" width="60px" height="50px" />
+                  <img
+                    src={java2}
+                    className="image1"
+                    width="60px"
+                    height="80px"
+                  />
                   <p className="item-title">
                     <h3> PHP </h3>
                   </p>
                   <p>
-                    {" "}
+  
                     We are looking for a PHP Developer responsible for managing
                     back-end services and the interchange of data between the
                     server and the users. Your primary focus will be the
                     development of all server-side logic, definition and
                     maintenance of the central database, and ensuring high
                     performance and responsiveness to requests from the
-                    front-end.{" "}
+                    front-end.
                   </p>
                 </div>
               </div>
             </div>
-         
 
-         
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  <img src={java5} className="image1" width="30px" height="30px" />
+                  <img
+                    src={technology5}
+                    className="image1"
+                    width="120px"
+                    height="80px"
+                  />
                   <p className="item-title">
                     <h3> Mern Stack</h3>
                   </p>
                   <p>
-                    {" "}
+  
                     We are looking for a MERN Stack Developer to produce
                     scalable software solutions. You’ll be part of a
                     cross-functional team that’s responsible for the full
@@ -298,11 +377,11 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  {" "}
-                  <img src={Ricon} className="image1" width="60px" height="50px" />
+                  <img src={Ricon} className="image1"  width="60px"
+                    height="50px"  />
                   <p className="item-title">
                     <h3>Web Designer </h3>
                   </p>
@@ -316,16 +395,21 @@ const Technology_child = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 Services-tab item">
+            <div className="col-md-4 Services-tab item">
               <div className="folded-corner service_tab_1">
                 <div className="text">
-                  {" "}
-                  <img src={java4} className="image1" width="60px" height="50px" />
+
+                  <img
+                    src={java4}
+                    className="image1"
+                    width="100px"
+                    height="80px"
+                  />
                   <p className="item-title">
                     <h3> Wordpress</h3>
                   </p>
                   <p>
-                    {" "}
+  
                     We are seeking a WordPress Developer responsible for both
                     back-end and front-end development, including creating
                     WordPress themes and plugins. This position requires a

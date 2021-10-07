@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="footer_content">
               <ul>
                 <li>
-                  <h3>Company</h3>
+                  <h3>Quick Link</h3>
                 </li>
                 <li>
                   <Link to="/">
@@ -92,13 +92,13 @@ const Footer = () => {
                   <h3>General Link</h3>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/terms">
                     <i className="fas fa-angle-right"></i>
                     Terms & Condition
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/policy">
                     <i className="fas fa-angle-right"></i>
                     Privacy policy
                   </Link>
