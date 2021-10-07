@@ -19,3 +19,8 @@
   border-bottom: 2px solid #46B9EC;  
 }
 
+.navbar 
+{
+  box-shadow: 0px 30px 30px 30px rgb(77 54 206 / 30%);
+}
+

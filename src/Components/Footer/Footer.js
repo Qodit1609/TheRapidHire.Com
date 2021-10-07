@@ -82,7 +82,7 @@ const Footer = () => {
                     Web Designer
                   </Link>
                 </li>
-              </ul>
+              </ul>  
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
@@ -121,7 +121,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="nofollow">
+                  <a href="https://www.facebook.com/The-Rapid-Hire-Pvt-Ltd-103302021496799/?modal=admin_todo_tour" 
+                  target="_blank" rel="nofollow">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
@@ -134,11 +135,11 @@ const Footer = () => {
                     <i class="fab fa-linkedin"></i>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="" target="_blank" rel="nofollow">
                     <i class="fab fa-instagram"></i>
                   </a>
-                </li>
+                </li> */}
               </div>
             </div>
           </div>
