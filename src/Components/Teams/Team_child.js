@@ -90,24 +90,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                 
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                  
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                  
                   </li>
                 </ul>
               </div>
@@ -125,24 +117,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                    
                   </li>
                 </ul>
               </div>
@@ -160,24 +144,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                    
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                    
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                    
                   </li>
                 </ul>
               </div>
@@ -199,24 +175,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                 
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                  
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                  
                   </li>
                 </ul>
               </div>
@@ -234,24 +202,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                 
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                  
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                  
                   </li>
                 </ul>
               </div>
@@ -269,24 +229,16 @@ const Team_child = () => {
                 </div>
                 <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                   <li>
-                    <a href="#">
-                      <span className="fab fa-facebook"></span>
-                    </a>
+                   
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-twitter"></span>
-                    </a>
+                 
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-google-plus"></span>
-                    </a>
+                  
                   </li>
                   <li>
-                    <a href="#">
-                      <span className="fab fa-linkedin-in"></span>
-                    </a>
+                  
                   </li>
                 </ul>
               </div>

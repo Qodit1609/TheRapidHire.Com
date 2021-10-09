@@ -128,7 +128,7 @@
 #career .modal-header .modal-title {
   font-size: 20px;
   line-height: 26px;
-  color: #212126;
+  color: #6aadd3;
   font-weight: bold;
 }
 
@@ -137,6 +137,7 @@
   font-size: 14px;
   line-height: 26px;
   margin-left: 10px;
+  
 }
 
 #career .modal-header p {
@@ -163,7 +164,7 @@
 }
 
 #career .black-btn.filled-btn {
-  background: #212126;
+  background: #46b9ec;
   color: #fff;
   font-size: 16px;
   line-height: 30px;

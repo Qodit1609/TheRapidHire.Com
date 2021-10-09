@@ -51,7 +51,7 @@ const Features_Child = () => {
                 on, we permit fervor to remain with us to produce powerful
                 answers for our clients.
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Features_Child = () => {
                   relationships with our customers making a superior association
                   each time we connect.
                 </p>
-                <button type="button">Read More</button>
+                
               </div>
             </div>
             <div className="col-md-6 feature-img">
@@ -109,7 +109,7 @@ const Features_Child = () => {
                 expectations to contend in the high speed worldwide market and
                 give refined programming answers for our customers.
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const Features_Child = () => {
                   solutions for our clients, we work with a right attitude and
                   thusly execute fittingly. It's not by and large you, it's us.
                 </p>
-                <button type="button">Read More</button>
+                
               </div>
             </div>
             <div className="col-md-6 feature-img">

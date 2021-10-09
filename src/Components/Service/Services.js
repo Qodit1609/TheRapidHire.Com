@@ -52,7 +52,7 @@ const Services = () => {
                 enhancement and productivity of the organization for the
                 satisfaction of its clients.
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Services = () => {
                   destination with a clear view of the business goal and ensure
                   that it supports the user-journey.
                 </p>
-                <button type="button">Read More</button>
+                
               </div>
             </div>
             <div className="col-md-6">
@@ -103,7 +103,7 @@ const Services = () => {
                 developing new products that meet and exceed their customer’s
                 expectations
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ const Services = () => {
                   the final product after sufficient feedback from our product’s
                   initial clients.
                 </p>
-                <button type="button">Read More</button>
+                
               </div>
             </div>
             <div className="col-md-6">
@@ -154,7 +154,7 @@ const Services = () => {
                 needed for analysis. We use tools like SQL and Python to make
                 data ready for data scientists
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ const Services = () => {
                   resources. Furthermore, IaaS, PaaS and SaaS platforms are also
                   available for services.
                 </p>
-                <button type="button">Read More</button>
+                
               </div>
             </div>
             <div className="col-md-6">
@@ -206,7 +206,7 @@ const Services = () => {
                 web development team to ensure proper and hassle-free
                 implementation.
               </p>
-              <button type="button">Read More</button>
+              
             </div>
           </div>
         </div>

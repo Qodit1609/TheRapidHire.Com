@@ -1,7 +1,7 @@
-import React from "react";
+import React,  {useEffect}  from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { useHistory, Link } from "react-router-dom";
+import {useHistory, Link } from "react-router-dom";
 import "./Career.css";
 import Fun from "../../assets/images/fun.jpg";
 import Mentorship from "../../assets/images/Mentorship.jpg";
@@ -11,9 +11,13 @@ import Location from "../../assets/images/placeholder.png";
 import Right from "../../assets/images/right.png";
 import $ from "jquery";
 
-const Career = () => {
-  const history = useHistory();
 
+const Career = () => {
+  
+  const redirect = () => {
+    window.location.href = '/apply'
+ }
+  
   return (
     <div id="career">
       <Header />
@@ -362,10 +366,10 @@ const Career = () => {
             <div class="modal-footer">
               <button
                 type="submit"
-                onClick={() => history.push("/apply", { from: "career" })}
+                onClick={redirect}
                 class="btn black-btn text-uppercase filled-btn"
               >
-                APPLY NOW <img src={Right} />
+                APPLY NOW 
               </button>
             </div>
           </div>
@@ -445,12 +449,12 @@ const Career = () => {
               </ul>
             </div>
             <div class="modal-footer">
-              <button
+             <button
                 type="submit"
-                onClick={() => history.push("/apply", { from: "career" })}
+                onClick={redirect}
                 class="btn black-btn text-uppercase filled-btn"
               >
-                APPLY NOW <img src={Right} />
+                APPLY NOW 
               </button>
             </div>
           </div>
@@ -532,12 +536,12 @@ const Career = () => {
               </ul>
             </div>
             <div class="modal-footer">
-              <button
+             <button
                 type="submit"
-                onClick={() => history.push("/apply", { from: "career" })}
+                onClick={redirect}
                 class="btn black-btn text-uppercase filled-btn"
               >
-                APPLY NOW <img src={Right} />
+                APPLY NOW 
               </button>
             </div>
           </div>
