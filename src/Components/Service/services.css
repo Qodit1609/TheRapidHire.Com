@@ -125,6 +125,7 @@
   #services .web-head button {
     margin: 0px 10px;
   }
+  /* //animation hidden in mobile view */
   [data-aos] {
     pointer-events: auto !important;
   }
@@ -136,7 +137,7 @@
   html:not(.no-js) [data-aos=fade-right],html:not(.no-js) [data-aos=fade-left] {
     transform: none !important;
   }
-
+/* end */
   #services .web-img {
     border-radius: 30px;
     height: 400px;

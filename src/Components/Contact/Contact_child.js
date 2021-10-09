@@ -50,51 +50,48 @@ const Contact_child = () => {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="project-form mb-3">
-                <div class="row"> 
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control contact-first-name"
-                        placeholder="First Name"
-                      />
+          <form onSubmit={sendEmail}>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="project-form mb-3">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control contact-first-name"
+                          placeholder="Name"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control contact-email"
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div className="submit-button">
+                        <button type="submit">
+                          Submit
+                        </button>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control contact-first-name"
-                        placeholder="Last Name"
-                      />
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <textarea
+                          class="form-control contact-message"
+                          name="mesage"
+                          placeholder="Type Your Requirement"
+                        ></textarea>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <input
-                        type="email"
-                        class="form-control contact-email"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <a class="slide-button button contact-us-button" href="#">
-                    <div class="first">Submit</div>
-                  </a>
+                    <div class="col-lg-12"></div>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <textarea
-                        class="form-control contact-message"
-                        placeholder="Type Your Requirement"
-                      ></textarea>
-                    </div>
-                  </div>
-                <div class="col-lg-12">
-                  
-                </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </section>
       <section class="iq-contact-us pb-0">
@@ -148,7 +145,7 @@ const Contact_child = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="https://www.facebook.com/The-Rapid-Hire-Pvt-Ltd-103302021496799/?modal=admin_todo_tour" target="_blank" rel="nofollow">
+                        <a href="" target="_blank" rel="nofollow">
                           <i class="fab fa-twitter"></i>
                         </a>
                       </li>
@@ -161,11 +158,11 @@ const Contact_child = () => {
                           <i class="fab fa-linkedin"></i>
                         </a>
                       </li>
-                      {/* <li>
+                      <li>
                         <a href="" target="_blank" rel="nofollow">
                           <i class="fab fa-instagram"></i>
                         </a>
-                      </li> */}
+                      </li>
                     </div>
                   </div>
                 </div>

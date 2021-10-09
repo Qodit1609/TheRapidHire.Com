@@ -127,18 +127,18 @@
   border-radius: 50px;
 }
 
-#contact_child .first {
+#contact_child .submit-button button {
   background-color: transparent;
   color: #000;
   border-radius: 50px;
   border: 1px solid #4CBCEC;
-  padding: 0 50px;
-  line-height: 50px;
+  padding: 0 40px;
+  line-height: 40px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-#contact_child .first:hover {
+#contact_child .submit-button button:hover {
   background: #4CBCEC;
   color: #fff;
 }

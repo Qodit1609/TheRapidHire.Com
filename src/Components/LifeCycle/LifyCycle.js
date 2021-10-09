@@ -1,7 +1,7 @@
 import React from "react";
 import "./LifeCycle.css";
 import planning from "../../assets/images/planning.svg";
-import development_lifecycle from "../../assets/images/sdlc1.png";
+import development_lifecycle from "../../assets/images/sdlc_image.gif";
 const LifeCycle = () => {
   return (
     <div id="lifecycle">

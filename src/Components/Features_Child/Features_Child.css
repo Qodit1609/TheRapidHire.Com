@@ -32,7 +32,7 @@ li {
   text-align: center;
   padding: 5px 40px;
   border-radius: 20px;
-  border: 2px solid #003380;
+  border: 2px solid #4CBCEC;
   margin: 10px 0px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -40,7 +40,7 @@ li {
 
 #fech .web-head button:hover {
   color: #fff !important;
-  background: #003380;
+  background: #4CBCEC;
 }
 
 #fech .feature-img img {
@@ -85,7 +85,7 @@ li {
   text-align: center;
   padding: 5px 40px;
   border-radius: 20px;
-  border: 2px solid #003380;
+  border: 2px solid #4CBCEC;
   margin: 50px 0px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -93,7 +93,7 @@ li {
 
 #fech .contact-description button:hover {
   color: #fff;
-  background: #003380;
+  background: #4CBCEC;
 }
 #fech .web-bg {
   background-color: #f5f5f5;
