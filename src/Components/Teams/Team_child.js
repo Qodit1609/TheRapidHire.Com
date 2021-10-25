@@ -261,102 +261,33 @@ const Team_child = () => {
             </div>
           </div>
         </div>
-        <div className="container mt-5 mb-5">
-          <div className="row g-3">
-            <div className="col-md-4">
-              <div className="card-img p-3 text-center px-4">
-                <div className="user-image">
-                  <img
-                    src={client2}
-                    className="img-fluid"
-                    width="70px"
-                    height="70px"
-                    className="rounded-circle"
-                  />
-                  {/* 
-              <img src="https://i.imgur.com/PKHvlRS.jpg" className="rounded-circle" width="80"> */}
+        <div class="container pb-5">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <p>We would like to express our satisfaction on the co-operation regarding the development of our web application. TheRapidHire and the development team did a very professional job. We are satisfied with the solution given to us and with the communication flow through the project. </p> <img src={client2} class="img-fluid"/>
+                    <div id="image-caption">Junl Sarukh <br/> CEO Of Softing</div>
                 </div>
-                <div className="user-content">
-                  <h5 className="mb-0">Junl Sarukh</h5>
-                  <span>CEO Of Softing</span>
-                  <p>
-                    We would like to express our satisfaction on the
-                    co-operation regarding the development of our web
-                    application. TheRapidHire and the development team did a
-                    very professional job. We are satisfied with the solution
-                    given to us and with the communication flow through the
-                    project.
-                  </p>
-                </div>
-                <div className="ratings">
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                </div>
-              </div>
             </div>
-            <div className="col-md-4">
-              <div className="card-img p-3 text-center px-4">
-                <div className="user-image">
-                  <img
-                    src={client}
-                    className="img-fluid"
-                    width="70px"
-                    height="70px"
-                    className="rounded-circle"
-                  />
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <p>We thank TheRapidHire for the wonderful job in helping us develop our program. Everyone was professional, excellent and hard working. Thanks to them, we were able to achieve our goal on time, and we look forward to continue working with them in the future.</p>
+                     <img src={client} class="img-fluid"/>
+                    <div id="image-caption">Anil Spia <br/> Director Of Softing</div>
                 </div>
-                <div className="user-content">
-                  <h5 className="mb-0">Anil Spia</h5>
-                  <span>Director Of Softing</span>
-                  <p>
-                    We thank TheRapidHire for the wonderful job in helping us
-                    develop our program. Everyone was professional, excellent
-                    and hard working. Thanks to them, we were able to achieve
-                    our goal on time, and we look forward to continue working
-                    with them in the future.
-                  </p>
-                </div>
-                <div className="ratings">
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                </div>
-              </div>
             </div>
-            <div className="col-md-4">
-              <div className="card-img p-3 text-center px-4">
-                <div className="user-image">
-                  <img
-                    src={client1}
-                    className="img-fluid"
-                    width="70px"
-                    height="70px"
-                    className="rounded-circle"
-                  />
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <p>Congratulations to all TheRapidHire for achieving this milestone (of completing 1 year in the software industry). Keep up the good work!</p> 
+                    <img src={client1} class="img-fluid"/>
+                    <div id="image-caption">Paul Munni <br/>Developer Of Softing</div>
                 </div>
-                <div className="user-content">
-                  <h5 className="mb-0">Paul Munni</h5>
-                  <span>Developer Of Softing</span>
-                  <p>
-                    Congratulations to all TheRapidHire for achieving this
-                    milestone (of completing 1 year in the software industry).
-                    Keep up the good work!
-                  </p>
-                </div>
-                <div className="ratings">
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
+        </div> 
+        <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a>
+    </div>
+</div>
       </section>
       {/* /* end testimonial */}
       <section className="contact-bg">

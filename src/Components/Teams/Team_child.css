@@ -139,7 +139,7 @@
   text-align: center;
   padding: 5px 40px;
   border-radius: 20px;
-  border: 2px solid #4CBCEC;
+  border: 2px solid #4cbcec;
   margin: 50px 0px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -147,7 +147,7 @@
 
 #team_child .contact-description button:hover {
   color: #fff;
-  background: #4CBCEC;
+  background: #4cbcec;
 }
 #team_child .web-bg {
   background-color: #f5f5f5;
@@ -188,7 +188,6 @@
   transition: all 0.5s ease-in-out;
   border: none;
   box-shadow: 5px 5px 10px #1f1f1fa8, -5px -5px 10px #1f1f1fa8;
-  
 }
 
 #team_child .container .card::before {
@@ -339,7 +338,6 @@
   box-shadow: 5px 5px 10px #1f1f1fa8, -5px -5px 10px #1f1f1fa8;
 }
 
-
 @media only screen and (max-width: 450px) {
   #team_child .home-info-grey h2 {
     text-align: center;
@@ -347,15 +345,108 @@
   #team_child .col-md-7 {
     padding-top: 35px;
     margin-top: 0px;
+  }
 }
+
+@media only screen and (max-width: 990px) {
+  #team_child .home-info-grey h2 {
+    text-align: center;
+  }
+  #team_child .col-md-7 {
+    padding-top: 35px;
+    margin-top: 0px;
+  }
+}
+
+#team_child #demo {
+  background: linear-gradient(112deg, #a3a0a0 50%, antiquewhite 50%);
+  max-width: 900px;
+  margin: auto;
+}
+#team_child .carousel-caption {
+  position: initial;
+  z-index: 10;
+  padding: 5rem 8rem;
+  color: rgba(78, 77, 77, 0.856);
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+@media (max-width: 767px) {
+  #team_child .carousel-caption {
+    position: initial;
+    z-index: 10;
+    padding: 3rem 2rem;
+    color: rgba(78, 77, 77, 0.856);
+    text-align: center;
+    font-size: 0.7rem;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+}
+
+#team_child .carousel-caption img {
+  width: 6rem;
+  border-radius: 5rem;
+  margin-top: 2rem;
+}
+
+#team_child .carousel-control-prev i {
+  background-color: #4CBCEC;
+  padding: 1.4rem;
+}
+#team_child .carousel-control-next i {
+  background-color: #4CBCEC;
+  padding: 1.4rem;
+}
+
+@media (max-width: 767px) {
+  #team_child .carousel-caption img {
+    width: 4rem;
+    border-radius: 4rem;
+    margin-top: 1rem;
+  }
+}
+
+#team_child #image-caption {
+  font-style: normal;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  #team_child #image-caption {
+    font-style: normal;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* #team_child i {
+      background-color: rgb(223, 56, 89);
+      padding: 1.4rem
   }
   
-  @media only screen and (max-width: 990px) {
-    #team_child .home-info-grey h2 {
-      text-align: center;
-    }
-    #team_child .col-md-7 {
-      padding-top: 35px;
-      margin-top: 0px;
+  @media(max-width:767px) {
+    #team_child  i {
+          padding: 0.8rem
+      }
   }
-    }
+   */
+/* .carousel-control-prev {
+      justify-content: flex-start
+  }
+  
+  .carousel-control-next {
+      justify-content: flex-end
+  } */
+
+.carousel-control-prev,
+.carousel-control-next {
+  transition: none;
+  opacity: unset;
+}

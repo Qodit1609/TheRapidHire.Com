@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -11,59 +11,81 @@ import Creativity from "../../assets/images/creativity.png";
 import Meeting from "../../assets/images/meeting.png";
 import Success from "../../assets/images/success.png";
 import Client from "../../assets/images/client.png";
+import axios from "axios";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 const About = () => {
+  const [data, setData] = useState("");
+  const [value, setValue] = useState([]);
+  const apiUrl = "https://therapidhiredev.herokuapp.com";
+  console.log("Show the api url here===>>", apiUrl);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/banner/`).then((resp) => {
+      setValue(resp.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log("Show the data here===>>>>>>>>>>>>", value);
+
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/about/").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second", data);
   const Our_Vision =
-  " TheRapidHire Pvt Ltd.  will inspire its employees to be the best they can be. We will engage in sustainable practices and anticipate the needs of our customers.   Our vision is to bring our employees into the 21st century through innovation and modern technology. Learning will be enhanced with computer software and all technologies that will allow employees to proceed at their own rate according to their ability. "
+    " TheRapidHire Pvt Ltd.  will inspire its employees to be the best they can be. We will engage in sustainable practices and anticipate the needs of our customers.   Our vision is to bring our employees into the 21st century through innovation and modern technology. Learning will be enhanced with computer software and all technologies that will allow employees to proceed at their own rate according to their ability. ";
 
   const Our_Mission =
-  "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. TheRapidHire has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
-  
+    "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. TheRapidHire has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
+
   const Values3 =
-  "Having clear company values helps us ensure that all our employees are working towards the same goals. Our core values support the company's vision and shape its culture. That's why our business decision should be aligned with these values. "
+    "Having clear company values helps us ensure that all our employees are working towards the same goals. Our core values support the company's vision and shape its culture. That's why our business decision should be aligned with these values. ";
 
   return (
     <div id="about">
       <Header />
-      <div className="service-bg cover-background">
-        <div className="container h-100">
-          <div className="row h-100 align-items-center" data-aos="zoom-in">
-            <div className="col-12 text-center">
-              <h1 className="fw-light">about us</h1>
-              <p className="lead">
-                TheRapidHire is a software development and IT outsourcing
-                company based in India. TheRapidHiretakes an energetic,
-                collaborative strategy to create and customize solutions across
-                the digital value chain. .
-              </p>
+      {value &&
+        value.slice(1, 2).map((data1, index) => (
+          <div
+            className="service-bg cover-background"
+            style={{
+              backgroundImage:
+                'url("https://therapidhiredev.herokuapp.com/banner/2021-10-21T09-07-25.574Zservice-bg.jpg")',
+            }}
+          >
+            <div className="container h-100" >
+              <div className="row h-100 align-items-center" data-aos="zoom-in" key={index}>
+                <div className="col-12 text-center">
+                  <h1 className="fw-light">{data1.title}</h1>
+                  <p className="lead">{data1.description}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        ))}
+        {data &&
+        data.slice(0, 1).map((value, index) =>
+           (
       <section className="about-sec">
         <div className="container">
           <div className="row">
             <div className="col-md-6">
               <div className="who-we">
-                <h1>Who we are</h1>
+                <h1>{value.title}</h1>
                 <p>
-                  TheRapidHire is a software development and IT outsourcing
-                  company based in India. TheRapidHiretakes an energetic,
-                  collaborative strategy to create and customize solutions
-                  across the digital value chain. We aim to create a network of
-                  businesses that help each other to acquire more customers.
-                  Giving a better idea of making your online presence better,
-                  TheRapidHirecompany helps you with quality service at minimal
-                  prices and complimentary with great satisfaction.
+                  {value.description}
                 </p>
               </div>
             </div>
             <div className="col-md-6">
               <img
-                src={WhoWe}
+                src={value.image}
                 data-aos={"fade-left"}
                 className="img-fluid who-img"
               />
@@ -71,106 +93,61 @@ const About = () => {
           </div>
         </div>
       </section>
+       ))}
+        {data &&
+        data.slice(1, 2).map((data1, index) => (
       <section className="about-sec about-bg">
-        <div className="container">
+        <div className="container" key={index == 2}>
           <div className="why-choose">
-            <h1>Why Choose Us?</h1>
+            <h1>{data1.mainTitle}</h1>
           </div>
           <div className="row pt-5">
+          {data &&
+                  data.slice(1, 5).map((value, index) => (
             <div className="col-md-3 choose_us">
               <div className="img_circle">
-                <img src={Client} className="img-fluid" alt="" />
+                <img src={value.image} className="img-fluid" alt="" />
               </div>
-              <h3>Client Oriented</h3>
+              <h3>{value.title}</h3>
               <p>
-              Being customer-oriented is an approach in which, rather than solving for the business’s needs, our company solves the customer’s problems first.
+              {value.description}
               </p>
             </div>
-            <div className="col-md-3 choose_us">
-              <div className="img_circle">
-                <img src={Creativity} alt="" className="img-fluid" />
-              </div>
-              <h3>Creativity</h3>
-              <p>
-              Our Creative thinking can also lead to innovation that will grow our business through increased productivity.  When we “focus on what things we can streamline and what things we need to cut out”              </p>
-            </div>
-            <div className="col-md-3 choose_us">
-              <div className="img_circle">
-                <img src={Meeting} alt="" className="img-fluid" />
-              </div>
-              <h3>Meeting Deadlines</h3>
-              <p>
-              Meeting Deadlines help us to collaborate toward achieving a shared goal, and to keep complex,we work multistage projects on track. we set all expectations
-              </p>
-            </div>
-            <div className="col-md-3 choose_us">
-              <div className="img_circle">
-                <img src={Success} className="img-fluid" alt="" />
-              </div>
-              <h3>A Plan for Success</h3>
-              <p>
-              Our Planning helps to critically assess the goal to see in realistic. It facilitates decision making and allows setting a time frame by predicting when our company can achieve its goal.               </p>
-            </div>
+             ))}
           </div>
         </div>
       </section>
+       ))}
+        {data &&
+        data.slice(5, 6).map((data2, index) => (
       <section className="about-sec">
         <div className="container">
           <div className="row">
+          {data &&
+                  data.slice(5, 8).map((value, index) => (
             <div className="col-md-4">
               <div className="vision-mission-content">
-                <img src={Vision} alt="Vision" className="img-fluid" />
-                <h3>Our Vision</h3>
+                <img src={value.image} alt="Vision" className="img-fluid" />
+                <h3>{value.title}</h3>
                 <p>
-                <ReactReadMoreReadLess
-        charLimit={70}
-        readMoreText={"Read more "}
-        readLessText={"Read less "}
-        readMoreClassName="read-more-less--more"
-        readLessClassName="read-more-less--less"
-      >
-        {Our_Vision}
-      </ReactReadMoreReadLess>
+                  <ReactReadMoreReadLess
+                    charLimit={70}
+                    readMoreText={"Read more "}
+                    readLessText={"Read less "}
+                    readMoreClassName="read-more-less--more"
+                    readLessClassName="read-more-less--less"
+                  >
+                   {value.description}
+                  </ReactReadMoreReadLess>
                 </p>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="vision-mission-content">
-                <img src={Mission} alt="Mision" className="img-fluid" />
-                <h3>Our Mission</h3>
-                <p>
-                <ReactReadMoreReadLess
-        charLimit={70}
-        readMoreText={"Read more "}
-        readLessText={"Read less "}
-        readMoreClassName="read-more-less--more"
-        readLessClassName="read-more-less--less"
-      >
-        {Our_Mission}
-      </ReactReadMoreReadLess>
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="vision-mission-content">
-                <img src={Values} alt="Value" className="img-fluid" />
-                <h3>Values</h3>
-                <p>
-                <ReactReadMoreReadLess
-        charLimit={70}
-        readMoreText={"Read more "}
-        readLessText={"Read less "}
-        readMoreClassName="read-more-less--more"
-        readLessClassName="read-more-less--less"
-      >
-        {Values3}
-      </ReactReadMoreReadLess>
-                </p>
-              </div>
-            </div>
+           
+            ))}
           </div>
         </div>
       </section>
+      ))}
       <section className="contact-bg">
         <div className="container">
           <div className="contact-description">

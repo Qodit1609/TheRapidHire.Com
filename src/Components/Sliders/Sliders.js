@@ -8,7 +8,8 @@ import slider2 from "../../assets/images/sli7.jpg";
 import mobileappdevelopment from "../../assets/images/sli6.jpg";
 const Sliders = () => {
   return (
-    <div className="sliders">
+    <div id="slide-main">
+    <div  className="sliders">
       <div
         id="carouselExampleCaptions"
         className="carousel slide"
@@ -94,6 +95,7 @@ const Sliders = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+    </div>
     </div>
   );
 };
