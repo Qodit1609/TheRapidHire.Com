@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Technology_child.css";
-import Ricon from "../../assets/images/illustration.png"
+import Ricon from "../../assets/images/illustration.png";
 import webdesign from "../../assets/images/techno.jpg";
 import Ricon2 from "../../assets/images/jquery.png";
 import Ricon3 from "../../assets/images/vue.png";
@@ -26,73 +26,114 @@ import technology4 from "../../assets/images/k7.png";
 import technology5 from "../../assets/images/mern.png";
 import technology6 from "../../assets/images/no-sql.png";
 import technology7 from "../../assets/images/oracle-sql.png";
+import axios from "axios";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
 const Technology_child = () => {
+  const [data, setData] = useState("");
+  const [value, setValue] = useState([]);
+  const [content, setContent] = useState([]);
+
+  const apiUrl = "https://therapidhiredev.herokuapp.com";
+  console.log("Show the api url here===>>", apiUrl);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/banner/`).then((resp) => {
+      setValue(resp.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log("Show the data here===>>>>>>>>>>>>", value);
+
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/ourTechnology")
+      .then((res) => {
+        setData(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second", data);
+
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/tecnologyExpertise")
+      .then((res) => {
+        setContent(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("Show the data", content);
+
   return (
     <div id="technology_child">
       <Header />
-      <div className="service-bg cover-background">
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
-            <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 className="fw-light">Our Technology</h1>
-              <p className="lead">
-                Technology is transforming the way we buy, sell, and do
-                everything. We help clients unlock potential and fuel growth
-                with software development services.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="home-info-grey pb-3">
-        <div className="container">
-          <div className="row ">
-            <div className="col-md-7">
-              <div className="our-tech">
-                <h2>Our Technology</h2>
-                <p>
-                  Welcome To Conet Technologies. Conet Technologies was born out
-                  of our passion to offer Innovative and State of the Art
-                  Technology Products & solutions for emerging Industrial and
-                  commercial requirements in the realm of Aerospace & Defense,
-                  Semiconductors, Broadcast, Telecommunication, Wireless,
-                  Communication NEM, Education segments, Renewable energy & IT.
-                </p>
+      {value &&
+        value.slice(3, 4).map((data1, index) => (
+          <div className="service-bg cover-background">
+            <div className="container h-100">
+              <div className="row h-100 align-items-center" key={index}>
+                <div className="col-12 text-center" data-aos="zoom-in">
+                  <h1 className="fw-light">{data1.title}</h1>
+                  <p className="lead">{data1.description}</p>
+                </div>
               </div>
             </div>
-            <div className="col-md-5 drop-cap-text">
-              <img
-                src={webdesign}
-                className="iamge2 img-fluid"
-                data-aos="fade-left"
-                data-aos-delay="100"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out-cubic"
-              />
-            </div>
           </div>
-        </div>
-      </section>
-      <section className="icon3">
-        <div className="container rounded">
-          <div className="h1 fw-bold text-center mt-2">OUR EXPERTISE </div>
+        ))}
+      {data &&
+        data.slice(0, 1).map((value, index) => (
+          <section className="home-info-grey pb-3">
+            <div className="container">
+              <div className="row ">
+                <div className="col-md-7">
+                  <div className="our-tech">
+                    <h2>{value.title}</h2>
+                    <p>{value.body}</p>
+                  </div>
+                </div>
+                <div className="col-md-5 drop-cap-text">
+                  <img
+                    src={value.image}
+                    className="iamge2 img-fluid"
+                    data-aos="fade-left"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out-cubic"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        ))}
+      {content &&
+        content.slice(0, 1).map((content, index) => (
+          <section className="icon3">
+            <div className="container rounded">
+              <div className="h1 fw-bold text-center mt-2">
+                {content.title}{" "}
+              </div>
 
-          <div className="fs-5 text-center pb-3 mb-3">
-            We help clients harness the power and scope of the digital world for
-            enhanced business performance and awareness.
-          </div>
-          <div className="rollers position-relative overflow-hidden">
-            <div className="start-roller"></div>
-            <div className="wrapper">
-              <div className="items-container roll-LL">
-                <div className="item">
+              <div className="fs-5 text-center pb-3 mb-3">{content.body}</div>
+              <div className="rollers position-relative overflow-hidden">
+                <div className="start-roller"></div>
+                <div className="wrapper">
+                  <div className="items-container roll-LL">
+                    <div className="item">
+                      <img
+                        src={content.image}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    {/* <div className="item">
                   <img
-                    src={java1}
+                    src={content.image}
                     className="image1"
                     width="100px"
                     height="80px"
@@ -100,7 +141,7 @@ const Technology_child = () => {
                 </div>
                 <div className="item">
                   <img
-                    src={java2}
+                    src={content.image}
                     className="image1"
                     width="100px"
                     height="80px"
@@ -108,320 +149,214 @@ const Technology_child = () => {
                 </div>
                 <div className="item">
                   <img
-                    src={java3}
+                    src={content.image}
                     className="image1"
                     width="100px"
                     height="80px"
                   />
-                </div>
-                <div className="item">
+                </div> */}
+                    {/* <div className="item">
                   <img
-                    src={java4}
+                    src={content.image}
                     className="image1"
                     width="100px"
                     height="80px"
                   />
+                </div> */}
+                  </div>
+                  <div className="items-container roll-RL">
+                    <div className="item">
+                      <img
+                        src={iot1}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={iot2}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img src={iot3} className="image1" />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={iot4}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={iot5}
+                        className="image1"
+                        width="150px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={iot6}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="item">
-                  <img
-                    src={java6}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
+                <div className="wrapper">
+                  <div className="items-container reverse-roll-LL">
+                    <div className="item">
+                      <img
+                        src={iot7}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={Ricon2}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={Ricon3}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={Ricon4}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={Ricon5}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                  </div>
+                  <div className="items-container reverse-roll-RL">
+                    <div className="item">
+                      <img
+                        src={technology2}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={technology3}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={technology4}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={technology5}
+                        className="image1"
+                        width="130px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={technology6}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                    <div className="item">
+                      <img
+                        src={technology7}
+                        className="image1"
+                        width="100px"
+                        height="80px"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="items-container roll-RL">
-                <div className="item">
-                  <img
-                    src={iot1}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={iot2}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img src={iot3} className="image1" />
-                </div>
-                <div className="item">
-                  <img
-                    src={iot4}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={iot5}
-                    className="image1"
-                    width="150px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={iot6}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="wrapper">
-              <div className="items-container reverse-roll-LL">
-                <div className="item">
-                  <img
-                    src={iot7}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={Ricon2}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={Ricon3}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={Ricon4}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={Ricon5}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-              </div>
-              <div className="items-container reverse-roll-RL">
-                <div className="item">
-                  <img
-                    src={technology2}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={technology3}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={technology4}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={technology5}
-                    className="image1"
-                    width="130px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={technology6}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={technology7}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="end-roller"></div>
-          </div>
-        </div>
-      </section>
-      <section className="technlogy2 pb-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-                  <img
-                    src={java1}
-                    className="image1"
-                    width="60px"
-                    height="80px"
-                  />
-                  <p className="item-title">
-                    <h3> Java</h3>
-                  </p>
-                  <p>
-                    Experience in core Java advanced programming,Experience in
-                    Spring Hibernate is mandatory.Experience in building
-                    mechanisms like Maven.Good knowledge on design patterns and
-                    anti-patterns. Good in algorithms and data structures. Good
-                    understanding of Database concepts and Experience in SQL,
-                    PLSQL and NoSQL. Excellent Analytical and program solving
-                    skills .
-                  </p>
-                </div>
+                {/* <div className="end-roller"></div> */}
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-                  <img
-                    src={java3}
-                    className="image1"
-                    width="60px"
-                    height="80px"
-                  />
-                  <p className="item-title">
-                    <h3> Mango-DB</h3>
-                  </p>
-                  <p>
-                    Our company is looking for a talented Magento 1 and/or 2
-                    developer that will be in charge of maintaining our
-                    eCommerce website. Your main tasks will be to ensure that
-                    the last security patches are installed and that existing
-                    functionality continues to work properly. You will also be
-                    in charge of developing new modules and applying any
-                    required front-end changes.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-                  <img
-                    src={java2}
-                    className="image1"
-                    width="60px"
-                    height="80px"
-                  />
-                  <p className="item-title">
-                    <h3> PHP </h3>
-                  </p>
-                  <p>
-  
-                    We are looking for a PHP Developer responsible for managing
-                    back-end services and the interchange of data between the
-                    server and the users. Your primary focus will be the
-                    development of all server-side logic, definition and
-                    maintenance of the central database, and ensuring high
-                    performance and responsiveness to requests from the
-                    front-end.
-                  </p>
-                </div>
-              </div>
-            </div>
+          </section>
+        ))}
 
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-                  <img
-                    src={technology5}
-                    className="image1"
-                    width="120px"
-                    height="80px"
-                  />
-                  <p className="item-title">
-                    <h3> Mern Stack</h3>
-                  </p>
-                  <p>
-  
-                    We are looking for a MERN Stack Developer to produce
-                    scalable software solutions. You’ll be part of a
-                    cross-functional team that’s responsible for the full
-                    software development life cycle, from conception to
-                    deployment. As a Full Stack Developer, you should be
-                    comfortable around both front-end and back-end coding
-                    languages
-                  </p>
-                </div>
+      {data &&
+        data.slice(0, 1).map((data2, index) => (
+          <section className="technlogy2 pb-5">
+            <div className="container">
+              <div className="row">
+                {data &&
+                  data.slice(1, 3).map((value, index) => (
+                    <div className="col-md-4 Services-tab item">
+                      <div className="folded-corner service_tab_1">
+                        <div className="text">
+                          <img
+                            src={value.image}
+                            className="image1"
+                            width="60px"
+                            height="80px"
+                          />
+                          <p className="item-title">
+                            <h3> {value.title}</h3>
+                          </p>
+                          <p>{value.body}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                {data &&
+                  data.slice(3, 7).map((value, index) => (
+                    <div className="col-md-4 Services-tab item">
+                      <div className="folded-corner service_tab_1">
+                        <div className="text">
+                          <img
+                            src={value.image}
+                            className="image1"
+                            width="120px"
+                            height="80px"
+                          />
+                          <p className="item-title">
+                            <h3> {value.title}</h3>
+                          </p>
+                          <p>{value.body}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-                  <img src={Ricon} className="image1"  width="60px"
-                    height="50px"  />
-                  <p className="item-title">
-                    <h3>Web Designer </h3>
-                  </p>
-                  <p>
-                    We are looking for a web designer who will be responsible
-                    for creating great websites for our clients. Primary duties
-                    include conceptualizing and implementing creative ideas for
-                    client websites, as well as creating visual elements that
-                    are in line with our clients' branding.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 Services-tab item">
-              <div className="folded-corner service_tab_1">
-                <div className="text">
-
-                  <img
-                    src={java4}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                  <p className="item-title">
-                    <h3> Wordpress</h3>
-                  </p>
-                  <p>
-  
-                    We are seeking a WordPress Developer responsible for both
-                    back-end and front-end development, including creating
-                    WordPress themes and plugins. This position requires a
-                    combination of programming skills (namely PHP, HTML5, CSS3,
-                    and JavaScript) and aesthetics (understanding element)
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        ))}
       <section className="contact-bg">
         <div className="container3">
           <div className="contact-description">

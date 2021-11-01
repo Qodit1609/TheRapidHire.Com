@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LifeCycle.css";
+import axios from "axios";
 import planning from "../../assets/images/planning.svg";
 import development_lifecycle from "../../assets/images/sdlc_image.gif";
 const LifeCycle = () => {
+  const [data, setData] = useState("");
+  
+
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/lifeCycle").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data======>>>>>>>>", data);
   return (
+
     <div id="lifecycle">
+       {data &&
+        data.slice(0, 1).map((data1, index) => (
       <div className="container-fluid main_contain">
-        <h2>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h2>
+        <h2>{data1.mainTitle}</h2>
         <p>
-          We employ best practice processes and development methodologies as a
-          foundation for rapid building of cutting-edge technology solutions in
-          a structured and methodical way.
+         {data1.description}
         </p>
         <div className="toggeler">
           <div className="row">
             <div className="col-lg-6 col-sm-12 acc_col">
+              {data &&
+            data.slice(0, 7).map((data, index) => (
               <div
                 className="panel-group"
                 id="accordion"
                 role="tablist"
                 aria-multiselectable="true"
-              >
+                >
                 <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingOne">
                     <h4 className="panel-title">
@@ -32,7 +46,7 @@ const LifeCycle = () => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Planning
+                       {data.title}
                       </a>
                     </h4>
                   </div>
@@ -44,46 +58,44 @@ const LifeCycle = () => {
                   >
                     <div className="panel-body">
                       <p>
-                        We collect all the relevant information from the
-                        customer to develop custom software development
-                        solutions as per their expectation.{" "}
+                       {data.body}
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="panel panel-default">
+                {/* <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingTwo">
-                    <h4 className="panel-title">
-                      <a
-                        className="collapsed"
-                        role="button"
-                        data-toggle="collapse"
+                  <h4 className="panel-title">
+                  <a
+                  className="collapsed"
+                  role="button"
+                  data-toggle="collapse"
                         data-parent="#accordion"
                         href="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Designing
+                      Designing
                       </a>
                     </h4>
-                  </div>
+                    </div>
                   <div
                     id="collapseTwo"
                     className="panel-collapse collapse"
                     role="tabpanel"
                     aria-labelledby="headingTwo"
-                  >
+                    >
                     <div className="panel-body">
                       <p>
                         Once the requirement analysis phase is completed, the
                         next step is to define and document software needs.{" "}
                       </p>
                     </div>
-                  </div>
-                </div>
-                <div className="panel panel-default">
+                    </div>
+                  </div> */}
+                {/* <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingThree">
-                    <h4 className="panel-title">
+                  <h4 className="panel-title">
                       <a
                         className="collapsed"
                         role="button"
@@ -93,87 +105,87 @@ const LifeCycle = () => {
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Defining
+                      Defining
                       </a>
-                    </h4>
-                  </div>
-                  <div
-                    id="collapseThree"
-                    className="panel-collapse collapse"
+                      </h4>
+                      </div>
+                      <div
+                      id="collapseThree"
+                      className="panel-collapse collapse"
                     role="tabpanel"
                     aria-labelledby="headingThree"
                   >
-                    <div className="panel-body">
+                  <div className="panel-body">
                       <p>
-                        Once the requirement analysis phase is completed, the
-                        next step is to define and document software needs.{" "}
+                      Once the requirement analysis phase is completed, the
+                      next step is to define and document software needs.{" "}
                       </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="panel panel-default">
+                      </div>
+                      </div>
+                    </div> */}
+                {/* <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFour">
-                    <h4 className="panel-title">
+                  <h4 className="panel-title">
                       <a
-                        className="collapsed"
+                      className="collapsed"
                         role="button"
                         data-toggle="collapse"
                         data-parent="#accordion"
                         href="#collapseFour"
                         aria-expanded="false"
                         aria-controls="collapseFour"
-                      >
+                        >
                         Building
-                      </a>
-                    </h4>
-                  </div>
-                  <div
-                    id="collapseFour"
+                        </a>
+                        </h4>
+                        </div>
+                        <div
+                        id="collapseFour"
                     className="panel-collapse collapse"
                     role="tabpanel"
                     aria-labelledby="headingFour"
-                  >
+                    >
                     <div className="panel-body">
                       <p>
-                        Developers start to build the entire system by writing
+                      Developers start to build the entire system by writing
                         code using the chosen programming language, techniques,
                         and methodologies.{" "}
                       </p>
-                    </div>
+                      </div>
                   </div>
-                </div>
-                <div className="panel panel-default">
+                  </div>
+                  <div className="panel panel-default">
                   <div className="panel-heading" role="tab" id="headingFive">
-                    <h4 className="panel-title">
+                  <h4 className="panel-title">
                       <a
-                        className="collapsed"
+                      className="collapsed"
                         role="button"
                         data-toggle="collapse"
                         data-parent="#accordion"
                         href="#collapseFive"
                         aria-expanded="false"
                         aria-controls="collapseFive"
-                      >
+                        >
                         Testing
-                      </a>
-                    </h4>
+                        </a>
+                        </h4>
                   </div>
                   <div
                     id="collapseFive"
                     className="panel-collapse collapse"
                     role="tabpanel"
                     aria-labelledby="headingFive"
-                  >
+                    >
                     <div className="panel-body">
-                      <p>
+                    <p>
                         Evaluating the quality of software with the aim of
                         finding and fixing defects.{" "}
                       </p>
                     </div>
                   </div>
-                </div>
+                  </div>
                 <div className="panel panel-default">
-                  <div className="panel-heading" role="tab" id="headingSix">
+                <div className="panel-heading" role="tab" id="headingSix">
                     <h4 className="panel-title">
                       <a
                         className="collapsed"
@@ -183,27 +195,27 @@ const LifeCycle = () => {
                         href="#collapseSix"
                         aria-expanded="false"
                         aria-controls="collapseSix"
-                      >
+                        >
                         Deployment
-                      </a>
-                    </h4>
-                  </div>
+                        </a>
+                        </h4>
+                        </div>
                   <div
-                    id="collapseSix"
+                  id="collapseSix"
                     className="panel-collapse collapse"
                     role="tabpanel"
                     aria-labelledby="headingSix"
-                  >
+                    >
                     <div className="panel-body">
-                      <p>
-                        The final software is released and checked for
+                    <p>
+                    The final software is released and checked for
                         deployment issues, if any.{" "}
-                      </p>
-                    </div>
-                  </div>
+                        </p>
+                        </div>
+                        </div>
                 </div>
                 <div className="panel panel-default">
-                  <div className="panel-heading" role="tab" id="headingSeven">
+                <div className="panel-heading" role="tab" id="headingSeven">
                     <h4 className="panel-title">
                       <a
                         className="collapsed"
@@ -215,7 +227,7 @@ const LifeCycle = () => {
                         aria-controls="collapseSeven"
                       >
                         Mentainense
-                      </a>
+                        </a>
                     </h4>
                   </div>
                   <div
@@ -224,24 +236,30 @@ const LifeCycle = () => {
                     role="tabpanel"
                     aria-labelledby="headingSeven"
                   >
-                    <div className="panel-body">
+                  <div className="panel-body">
                       <p>
-                        According to the service level agreement, we ensure that
+                      According to the service level agreement, we ensure that
                         needs continue to be met and that the system continues
                         to perform as per the specification mentioned in the
                         first phase.{" "}
                       </p>
                     </div>
-                  </div>
-                </div>
+                    </div>
+                </div> */}
+              
               </div>
+            ))}
             </div>
+                {data &&
+                  data.slice(0, 1).map((data, index) => (
             <div className="col-lg-6 col-sm-12 development">
-              <img src={development_lifecycle} />
+              <img src={data.image} />
             </div>
+        ))}
           </div>
         </div>
       </div>
+        ))}
     </div>
   );
 };

@@ -37,11 +37,11 @@ const Services = () => {
         value.slice(0, 1).map((data1, index) => (
           <div
             className="service-bg cover-background"
-            style={{
-              backgroundImage:
-                'url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-09-37.262Zabout-banner.jpg")',
+            // style={{
+            //   backgroundImage:
+            //     'url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-09-37.262Zabout-banner.jpg")',
              
-            }}
+            // }}
           >
             <div className="container h-100">
               <div className="row h-100 align-items-center" key={index}>

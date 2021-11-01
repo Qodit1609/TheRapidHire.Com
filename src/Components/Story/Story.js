@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import axios from "axios";
 import "./Story.css";
 import MernIcon from "../../assets/images/mern-icon.png";
 import WebDesignIcon from "../../assets/images/computer.png";
@@ -22,21 +23,25 @@ import WordpressIcon from "../../assets/images/wordpress-icon.png";
 import SalesforceIcon from "../../assets/images/salesforce-icon.png";
 
 const Story = () => {
-  //  const  myFunction=()=> {
-  //     var dots = document.getElementById("dots");
-  //     var moreText = document.getElementById("more");
-  //     var btnText = document.getElementById("myBtn");
+  const [data, setData] = useState("");
+  const [value, setValue] = useState("");
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/Home").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("first show the data=======>>>>>", data);
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/serviceChild")
+      .then((res) => {
+        setValue(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second show the data==========>>>>>>>", value);
 
-  //     if (dots.style.display === "none") {
-  //       dots.style.display = "inline";
-  //       btnText.innerHTML = "Read more";
-  //       moreText.style.display = "none";
-  //     } else {
-  //       dots.style.display = "none";
-  //       btnText.innerHTML = "Read less";
-  //       moreText.style.display = "inline";
-  //     }
-  //   }
   // our service//
   const WEB_DESIGN =
     "  Want to build your product with a team thatestablishes a clear design process, meets deadlines,and delivers a spot-on end result? Turn toIntellectsoft’s UI and UX services UI and UX services.";
@@ -86,535 +91,366 @@ const Story = () => {
   return (
     <div className="story">
       <div className="container-fluid">
-        <div className="content">
-          <h2>Story About Us</h2>
-          {/* <p>Create your app page with expert developer</p> */}
-          <p className="content_title">
-            TheRapidHire Pvt Ltd is a growing software development & IT
-            outsourcing company based in India. We are a government certified &
-            acclaimed IT company. Established in 2019, with a mission to deliver
-            quality services at reasonable cost. TRH takes an agile,
-            collaborative approach to create customized solutions across the
-            digital value chain. Our deep expertise in infrastructure and
-            applications management turns Your Ideas into reality.
-          </p>
-        </div>
+        {data &&
+          data.slice(0, 1).map((value, index) => (
+            <div className="content">
+              <h2>{value.title}</h2>
 
-        <div className="tabular">
-          <ul className="nav nav-tabs" id="myTab" role="tablist">
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                id="home-tab"
-                data-toggle="tab"
-                href="#home"
-                role="tab"
-                aria-controls="home"
-                aria-selected="true"
-              >
-                Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                id="profile-tab"
-                data-toggle="tab"
-                href="#profile"
-                role="tab"
-                aria-controls="profile"
-                aria-selected="false"
-              >
-                Technology
-              </a>
-            </li>
-          </ul>
-          <div className="tab-content" id="myTabContent">
-            <div
-              className="tab-pane fade show active"
-              id="home"
-              role="tabpanel"
-              aria-labelledby="home-tab"
-            >
-              <div className="container">
-                <div className="row">
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                    style={{ marginTop: "1rem" }}
+              <p className="content_title">{value.description}</p>
+            </div>
+          ))}
+        {value &&
+          value.slice(0, 1).map((data, index) => (
+            <div className="tabular">
+              <ul className="nav nav-tabs" id="myTab" role="tablist">
+                <li className="nav-item">
+                  <a
+                    className="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
                   >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={WebDesignIcon} />
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                  >
+                    Technology
+                  </a>
+                </li>
+              </ul>
+              <div className="tab-content" id="myTabContent">
+                <div
+                  className="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <div className="container">
+                    <div className="row">
+                      {value &&
+                        value.slice(0, 8).map((value, index) => (
+                          <div
+                            className="col-lg-3 col-md-6 col-sm-6"
+                            style={{ marginTop: "1rem" }}
+                            style={{ marginTop: "1rem" }}
+                          >
+                            <div className="serviceBox">
+                              <div className="service-icon">
+                                <img src={value.image} />
+                              </div>
+                              <div className="service-content">
+                                <h3 className="title">{value.title}</h3>
+                                <div className="dummy">
+                                  <p className="description">
+                                    <ReactReadMoreReadLess
+                                      charLimit={70}
+                                      readMoreText={"Read more "}
+                                      readLessText={"Read less "}
+                                      readMoreClassName="read-more-less--more"
+                                      readLessClassName="read-more-less--less"
+                                    >
+                                      {value.description}
+                                    </ReactReadMoreReadLess>
+                                  </p>
+                                  {/* <button onClick={myFunction} id="myBtn">Read more</button> */}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <div className="container">
+                    <div className="row">
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox">
+                          <div className="service-icon">
+                            <img src={JavaIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">Java</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {JAVA}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="service-content">
-                        <h3 className="title">Web Design</h3>
-                        <div className="dummy">
-                          <p className="description">
-                            <ReactReadMoreReadLess
-                              charLimit={70}
-                              readMoreText={"Read more "}
-                              readLessText={"Read less "}
-                              readMoreClassName="read-more-less--more"
-                              readLessClassName="read-more-less--less"
-                            >
-                              {WEB_DESIGN}
-                            </ReactReadMoreReadLess>
-                          </p>
-                          {/* <button onClick={myFunction} id="myBtn">Read more</button> */}
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox red">
+                          <div className="service-icon">
+                            <img src={PhpIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">PHP</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={70}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {PHP}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox">
+                          <div className="service-icon">
+                            <img src={MachineLearning} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">MACHINE LEARNING</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {MACHINE_LEARNING}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox red">
+                          <div className="service-icon">
+                            <img src={MernIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">MERN STACK</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={70}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {MERN_STACK}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox">
+                          <div className="service-icon">
+                            <img src={MeanIcons} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">MEAN STACK</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={70}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {MEAN_STACK}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox red">
+                          <div className="service-icon">
+                            <img src={AIIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">Artificial intelligence</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {ARTIFICIAL_INTELLIGENCE}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox ">
+                          <div className="service-icon">
+                            <img src={IotIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">IoT</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {IOT}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox red">
+                          <div className="service-icon">
+                            <img src={WordpressIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">Wordpress</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {WORDPRESS}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox ">
+                          <div className="service-icon">
+                            <img src={ShopifyIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">SHOPIFY</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={70}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {SHOPIFY}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox red">
+                          <div className="service-icon">
+                            <img src={CloudComputing} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">CLOUD COMPUTING</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={70}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {CLOUD_COMPUTING}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-lg-3 col-md-6 col-sm-6"
+                        style={{ marginTop: "1rem" }}
+                      >
+                        <div className="serviceBox ">
+                          <div className="service-icon">
+                            <img src={SalesforceIcon} />
+                          </div>
+                          <div className="service-content">
+                            <h3 className="title">SALESFORCE</h3>
+                            <p className="description">
+                              <ReactReadMoreReadLess
+                                charLimit={50}
+                                readMoreText={"Read more "}
+                                readLessText={"Read less "}
+                                readMoreClassName="read-more-less--more"
+                                readLessClassName="read-more-less--less"
+                              >
+                                {SALESFORCE}
+                              </ReactReadMoreReadLess>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={WebDevelopIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Web Development</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {WEB_DEVELOPMENT}
-                          </ReactReadMoreReadLess>
-                        </p>
-                        {/* <button onClick={myFunction} id="myBtn">Read more</button> */}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={ItDatabase} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">IT & Database</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {IT_DATABASE}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={AWS} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">AWS Services</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {AWS_SERVICES}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={AppDevelopmentIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">App Development</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {longText4}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={CloudIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Cloud Services</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {longText7}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox ">
-                      <div className="service-icon">
-                        <img src={DatabaseMangeIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Database Management</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {longText6}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={CyberIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Cyber Security</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {longText6}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div
-              className="tab-pane fade"
-              id="profile"
-              role="tabpanel"
-              aria-labelledby="profile-tab"
-            >
-              <div className="container">
-                <div className="row">
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={JavaIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Java</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {JAVA}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={PhpIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">PHP</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {PHP}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={MachineLearning} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">MACHINE LEARNING</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {MACHINE_LEARNING}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={MernIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">MERN STACK</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {MERN_STACK}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox">
-                      <div className="service-icon">
-                        <img src={MeanIcons} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">MEAN STACK</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {MEAN_STACK}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={AIIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Artificial intelligence</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {ARTIFICIAL_INTELLIGENCE}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox ">
-                      <div className="service-icon">
-                        <img src={IotIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">IoT</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {IOT}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={WordpressIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">Wordpress</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {WORDPRESS}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox ">
-                      <div className="service-icon">
-                        <img src={ShopifyIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">SHOPIFY</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {SHOPIFY}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox red">
-                      <div className="service-icon">
-                        <img src={CloudComputing} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">CLOUD COMPUTING</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={70}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {CLOUD_COMPUTING}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 col-md-6 col-sm-6"
-                    style={{ marginTop: "1rem" }}
-                  >
-                    <div className="serviceBox ">
-                      <div className="service-icon">
-                        <img src={SalesforceIcon} />
-                      </div>
-                      <div className="service-content">
-                        <h3 className="title">SALESFORCE</h3>
-                        <p className="description">
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more "}
-                            readLessText={"Read less "}
-                            readMoreClassName="read-more-less--more"
-                            readLessClassName="read-more-less--less"
-                          >
-                            {SALESFORCE}
-                          </ReactReadMoreReadLess>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          ))}
       </div>
     </div>
   );

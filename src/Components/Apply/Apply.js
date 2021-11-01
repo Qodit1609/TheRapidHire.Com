@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import "./Apply.css";
 
 const Apply = () => {
+  const [value, setValue] = useState([]);
+  const apiUrl = "https://therapidhiredev.herokuapp.com";
+  console.log("Show the api url here===>>", apiUrl);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setMobile] = useState("");
@@ -23,44 +27,54 @@ const Apply = () => {
       description,
       upload,
     };
-    let result = await fetch("https://qoditdev.herokuapp.com/careerform", {
+    let result = await fetch("https://therapidhiredev.herokuapp.com/applyNow", {
       method: "POST",
       body: formData,
     });
     alert("data has been saved");
   }
-
+  useEffect(() => {
+    axios.get(`${apiUrl}/banner/`).then((resp) => {
+      setValue(resp.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("Show the data here===>>>>>>>>>>>>", value);
   return (
     <div id="apply">
       <Header />
-      <div className="service-bg cover-background">
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
-            <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 className="fw-light">Apply Now</h1>
-              <p className="lead">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1700s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
+      {value &&
+        value.slice(7, 8).map((data1, index) => (
+          <div
+            className="service-bg cover-background"
+            style={{
+              backgroundImage:
+                'url("https://therapidhiredev.herokuapp.com/banner//2021-10-27T07-23-37.523Ztechnology.jpg")',
+            }}
+          >
+            <div className="container h-100">
+              <div className="row h-100 align-items-center" key={index}>
+                <div className="col-12 text-center" data-aos="zoom-in">
+                  <h1 className="fw-light">{data1.title}</h1>
+                  <p className="lead">{data1.description}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        ))}
       <section class="apply-sec text-center login-block">
         <div class="container d-flex justify-content-center">
           <div class="form">
             <div class="contact-info">
-            <h3 id="summernote" class="listHeading">
-               Java Developer
+              <h3 id="summernote" class="listHeading">
+                Java Developer
               </h3>
               <ul class="listForJob">
                 <ul>
                   <li>
-                    Experience in core Java advanced programming. Experience in
-                    Spring & Hibernate is mandatory. Experience in building
-                    mechanisms like Maven. Good knowledge on design patterns and
+                    in core Java advanced programming. Experience in Spring &
+                    Hibernate is mandatory. Experience in building mechanisms
+                    like Maven. Good knowledge on design patterns and
                     anti-patterns. Good in algorithms and data structures.
                     <li>
                       {" "}
@@ -68,7 +82,9 @@ const Apply = () => {
                       SQL, PLSQL and NoSQL. Excellent Analytical and program
                       solving skills Excellent written and oral communication
                       skills self-starter and highly motivated Work in a dynamic
-                      environment and ability to adapt quickly to changes.</li><li>
+                      environment and ability to adapt quickly to changes.
+                    </li>
+                    <li>
                       Experience with Test and defect management tools. An
                       innovator, always suggesting newer ways of improving
                       Productivity. Mentor and train team members. Identify and

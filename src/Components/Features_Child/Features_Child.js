@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Features_Child.css";
@@ -6,143 +6,99 @@ import webdesign from "../../assets/images/web2.png";
 import webdesign2 from "../../assets/images/design-feature.png";
 import webdesign3 from "../../assets/images/teamlead.png";
 import webdesign4 from "../../assets/images/2.png";
+import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 const Features_Child = () => {
+  const [data, setData] = useState("");
+  const [value, setValue] = useState([]);
+  const apiUrl = "https://therapidhiredev.herokuapp.com";
+  console.log("Show the api url here===>>", apiUrl);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/banner/`).then((resp) => {
+      setValue(resp.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log("Show the data here===>>>>>>>>>>>>", value);
+
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/feature/").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second", data);
+
   return (
     <div id="fech">
       <Header />
-      <div className="service-bg cover-background">
+      {value &&
+        value.slice(2, 3).map((data1, index) => (
+      <div className="service-bg cover-background"  
+      // style={{
+      //   backgroundImage:
+      //     'url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-10-18.467Zdevelop1.jpg")',
+       
+      // }}
+      >
         <div className="container h-100">
-          <div className="row h-100 align-items-center">
+          <div className="row h-100 align-items-center" key={index}>
             <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 className="fw-light">Our Feature</h1>
+              <h1 className="fw-light">{data1.title}</h1>
               <p className="lead">
-                Technology is transforming the way we buy, sell, and do
-                everything. We help clients unlock potential and fuel growth
-                with software development services.
+              {data1.description}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="container sec-service">
-        <div className="row">
-          <div className="col-md-6 feature-img">
-            <img
-              className="img-fluid"
-              data-aos="fade-right"
-              data-aos-delay="50"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out-cubic"
-              src={webdesign}
-            />
-          </div>
-          <div className="col-md-6">
-            <div className="web-head">
-              <h3>Experienced team</h3>
-              <p>
-                TheRapidHire furnishes a complete answer for you with inventive
-                methodology and high trustworthiness,We let you stay ahead in
-                this computerized promoting world through changed
-                administrations forthcoming on the lookout and which are as of
-                now settled too. With an extraordinary energy for what we work
-                on, we permit fervor to remain with us to produce powerful
-                answers for our clients.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="web-bg">
-        <div className="container sec-service">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="web-head">
-                <h3>Diverse technology</h3>
-                <p>
-                  Our team helps you to increase control over your small
-                  business with software designed to grow with you. Streamline
-                  all processes, gain greater insight into your business, and
-                  make decisions based on real-time information to drive
-                  profitable growth.We have faith in making long haul
-                  relationships with our customers making a superior association
-                  each time we connect.
-                </p>
-                
+       ))}
+      {data &&
+        data.map((data, index) =>
+          index % 2 == 0 ? (
+            <div className="container sec-service">
+              <div className="row">
+                <div className="col-md-6">
+                  <img
+                    data-aos={"fade-right"}
+                    className="img-fluid web-img"
+                    src={data.image}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <div className="web-head">
+                    <h3>{data.title}</h3>
+                    <p>{data.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-6 feature-img">
-              <img
-                className="img-fluid"
-                data-aos="fade-left"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out-cubic"
-                src={webdesign2}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="container sec-service">
-        <div className="row">
-          <div className="col-md-6 feature-img">
-            <img
-              className="img-fluid"
-              data-aos="fade-right"
-              data-aos-delay="50"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out-cubic"
-              src={webdesign3}
-            />
-          </div>
-          <div className="col-md-6">
-            <div className="web-head">
-              <h3>Research and development</h3>
-              <p>
-                We employ best practice processes and development methodologies
-                as a foundation for rapid building of cutting-edge technology
-                solutions in a structured and methodical way.We keep elevated
-                expectations to contend in the high speed worldwide market and
-                give refined programming answers for our customers.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="web-bg">
-        <div className="container sec-service">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="web-head">
-                <h3>Availability all the time</h3>
-                <p>
-                  We have been giving multidimensional IT organizations to our
-                  clients including electronic exhibiting and online webpage
-                  arranging solutions.we Offer monetarily wise and quick
-                  solutions for our clients, we work with a right attitude and
-                  thusly execute fittingly. It's not by and large you, it's us.
-                </p>
-                
+          ) : (
+            <section className="web-bg">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="web-head">
+                      <h3>{data.title}</h3>
+                      <p> {data.description}</p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <img
+                      data-aos={"fade-left"}
+                      className="img-fluid web-img"
+                      src={data.image}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-md-6 feature-img">
-              <img
-                className="img-fluid"
-                data-aos="fade-left"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out-cubic"
-                src={webdesign4}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+          )
+        )}
       <section className="contact-bg">
         <div className="container">
           <div className="contact-description">

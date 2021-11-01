@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Team_child.css";
+import axios from "axios";
 import webdesign from "../../assets/images/teamlead.png";
 import s2 from "../../assets/images/Shraddhha.jpg";
 import s3 from "../../assets/images/pp.jpg";
@@ -16,279 +17,236 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 const Team_child = () => {
+  const [data, setData] = useState("");
+  const [value, setValue] = useState([]);
+  const [value2, setValue2] = useState([]);
+  const [value3, setValue3] = useState([]);
+  const apiUrl = "https://therapidhiredev.herokuapp.com";
+  console.log("Show the api url here===>>", apiUrl);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/banner/`).then((resp) => {
+      setValue(resp.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("Show the data here===>", value);
+
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/teams/").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second", data);
+
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/innovativeTeam")
+      .then((res) => {
+        setValue2(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data==>>>", value2);
+
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/testimonial")
+      .then((res) => {
+        setValue3(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data==>>>", value3);
   return (
     <div id="team_child">
       <Header />
-      <div className="service-bg cover-background">
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
-            <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 className="fw-light">Meet Our Team</h1>
-              <p className="lead">
-                The way a team plays as a whole determines its success. You may
-                have the greatest bunch of individual stars in the world. We can
-                all do small things, with great love, and together we can do
-                something wonderful.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="home-info-grey">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-7">
-              <h2>EXPERIENCED TEAM</h2>
-              <p>
-                TheRapidHire furnishes a complete answer for you with inventive
-                methodology and high trustworthiness,We let you stay ahead in
-                this computerized promoting world through changed
-                administrations forthcoming on the lookout and which are as of
-                now settled too.
-              </p>
-            </div>
-            <div className="col-md-5 drop-cap-text">
-              <img
-                src={webdesign}
-                className="iamge2 img-fluid"
-                data-aos="fade-left"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out-cubic"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="team1">
-        <div className="container mt-5 d-flex justify-content-center ">
-          <div className="row1">
-            <div className="container text-center content">
-              <h2>INNOVATIVE TEAM</h2>
-              <p>
-                The way a team plays as a whole determines its success. You may
-                have the greatest bunch of individual stars in the world. We can
-                all do small things, with great love, and together we can do
-                something wonderful.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="container mt-5 mb-5">
-          <div className="row">
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s2} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Shraddha Sharma</div>
-                  <p className="designation text-muted text-uppercase">
-                    {" "}
-                    Business Development Executive
-                  </p>
+      {value &&
+        value.slice(4, 5).map((data1, index) => (
+          <div
+            className="service-bg cover-background"
+           
+          >
+            <div className="container h-100">
+              <div className="row h-100 align-items-center">
+                <div className="col-12 text-center" data-aos="zoom-in">
+                  <h1 className="fw-light">{data1.title}</h1>
+                  <p className="lead">{data1.description}</p>
                 </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-                   
-                  </li>
-                  <li>
-                 
-                  </li>
-                  <li>
-                  
-                  </li>
-                  <li>
-                  
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s3} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Vikas Choudhary</div>
-                  <p className="designation text-muted text-uppercase">
-                    Web Developer
-                  </p>
-                </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-
-                  </li>
-                  <li>
-                   
-                  </li>
-                  <li>
-                   
-                  </li>
-                  <li>
-                    
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s4} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Nitin vishvakarma</div>
-                  <p className="designation text-muted text-uppercase">
-                    Web Developer
-                  </p>
-                </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-                   
-                  </li>
-                  <li>
-                    
-                  </li>
-                  <li>
-                    
-                  </li>
-                  <li>
-                    
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s5} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Avinash Malakar</div>
-                  <p className="designation text-muted text-uppercase">
-                    Software developer
-                  </p>
+        ))}
+      {data &&
+        data.slice(0, 1).map((value, index) => (
+          <section className="home-info-grey">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-7">
+                  <h2>{value.title}</h2>
+                  <p>{value.description}</p>
                 </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-                   
-                  </li>
-                  <li>
-                 
-                  </li>
-                  <li>
-                  
-                  </li>
-                  <li>
-                  
-                  </li>
-                </ul>
+                <div className="col-md-5 drop-cap-text">
+                  <img
+                    src={value.image}
+                    className="iamge2 img-fluid"
+                    data-aos="fade-left"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out-cubic"
+                  />
+                </div>
               </div>
             </div>
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s6} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Ankita Yadav</div>
-                  <p className="designation text-muted text-uppercase">
-                    Software Developer
-                  </p>
+          </section>
+        ))}
+      {value2 &&
+        value2.slice(0, 1).map((data2, index) => (
+          <section className="team1">
+            <div className="container mt-5 d-flex justify-content-center ">
+              <div className="row1">
+                <div className="container text-center content">
+                  <h2>{data2.title}</h2>
+                  <p>{data2.description}</p>
                 </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-                   
-                  </li>
-                  <li>
-                 
-                  </li>
-                  <li>
-                  
-                  </li>
-                  <li>
-                  
-                  </li>
-                </ul>
               </div>
             </div>
-            <div className="col-md-4 mb-md-0 mb-3">
-              <div className="card d-flex flex-column align-items-center justify-content-center">
-                <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div className="img-container rounded-circle">
-                    <img src={s7} className="rounded-circle" />
-                  </div>
-                  <div className="h3">Krishana Makwana</div>
-                  <p className="designation text-muted text-uppercase">
-                    Software Developer
-                  </p>
-                </div>
-                <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                  <li>
-                   
-                  </li>
-                  <li>
-                 
-                  </li>
-                  <li>
-                  
-                  </li>
-                  <li>
-                  
-                  </li>
-                </ul>
+            <div className="container mt-5 mb-5">
+              <div className="row">
+                {value2 &&
+                  value2.slice(3, 7).map((value, index) => (
+                    <div className="col-md-4 mb-md-0 mb-3">
+                      <div className="card d-flex flex-column align-items-center justify-content-center">
+                        <div className="inner-content d-flex flex-column align-items-center justify-content-center">
+                          <div className="img-container rounded-circle">
+                            <img src={value.image} className="rounded-circle" />
+                          </div>
+                          <div className="h3">{value.name}</div>
+                          <p className="designation text-muted text-uppercase">
+                            {value.designation}
+                          </p>
+                        </div>
+                        <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <div className="container">
+              <div className="row">
+                {value2 &&
+                  value2.slice(0, 3).map((value, index) => (
+                    <div className="col-md-4 mb-md-0 mb-3">
+                      <div className="card d-flex flex-column align-items-center justify-content-center">
+                        <div className="inner-content d-flex flex-column align-items-center justify-content-center">
+                          <div className="img-container rounded-circle">
+                            <img src={value.image} className="rounded-circle" />
+                          </div>
+                          <div className="h3">{value.name}</div>
+                          <p className="designation text-muted text-uppercase">
+                            {value.designation}
+                          </p>
+                        </div>
+                        <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </section>
+        ))}
       {/* testimonial */}
-      <section className="team2">
-        <div className="container mt-5 d-flex justify-content-center ">
-          <div className="row2">
-            <div className="container text-center content">
-              <h2>"Testimonial"</h2>
-              <p>
-                The way a team plays as a whole determines its success. You may
-                have the greatest bunch of individual stars in the world. We can
-                all do small things, with great love, and together we can do
-                something wonderful.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container pb-5">
-      <div id="demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption">
-                    <p>We would like to express our satisfaction on the co-operation regarding the development of our web application. TheRapidHire and the development team did a very professional job. We are satisfied with the solution given to us and with the communication flow through the project. </p> <img src={client2} class="img-fluid"/>
-                    <div id="image-caption">Junl Sarukh <br/> CEO Of Softing</div>
+      {value3 &&
+        value3.slice(0, 1).map((data2, index) => (
+          <section className="team2">
+            <div
+              className="container mt-5 d-flex justify-content-center"
+              key={index}
+            >
+              <div className="row2">
+                <div className="container text-center content">
+                  <h2>{data2.title} </h2>
+
+                  <p>{data2.mainDescription}</p>
                 </div>
+              </div>
             </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>We thank TheRapidHire for the wonderful job in helping us develop our program. Everyone was professional, excellent and hard working. Thanks to them, we were able to achieve our goal on time, and we look forward to continue working with them in the future.</p>
-                     <img src={client} class="img-fluid"/>
-                    <div id="image-caption">Anil Spia <br/> Director Of Softing</div>
+
+            <div class="container pb-5">
+              <div
+                id="demo"
+                class="carousel slide"
+                data-ride="carousel"
+                key={index}
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    {value3 &&
+                      value3.slice(0, 1).map((data3, index) => (
+                        <div class="carousel-caption">
+                          <p>{data3.body}</p>
+                          <img src={data3.image} class="img-fluid" />
+                          <div id="image-caption">
+                            {data3.name}
+                            <br />
+                            {data3.designation}
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                  {value3 &&
+                    value3.slice(1, 2).map((data4, index) => (
+                      <div class="carousel-item">
+                        <div class="carousel-caption">
+                          <p>{data4.body}</p>
+                          <img src={data4.image} class="img-fluid" />
+                          <div id="image-caption">
+                            {data4.name}
+                            <br />
+                            {data4.designation}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  {value3 &&
+                    value3.slice(2, 3).map((data5, index) => (
+                      <div class="carousel-item">
+                        <div class="carousel-caption">
+                          <p>{data5.body}</p>
+                          <img src={data5.image} class="img-fluid" />
+                          <div id="image-caption">
+                            {data5.name}
+                            <br />
+                            {data5.designation}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                 </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  {" "}
+                  <i class="fas fa-arrow-left"></i>{" "}
+                </a>{" "}
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  {" "}
+                  <i class="fas fa-arrow-right"></i>
+                  {""}
+                </a>
+              </div>
             </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>Congratulations to all TheRapidHire for achieving this milestone (of completing 1 year in the software industry). Keep up the good work!</p> 
-                    <img src={client1} class="img-fluid"/>
-                    <div id="image-caption">Paul Munni <br/>Developer Of Softing</div>
-                </div>
-            </div>
-        </div> 
-        <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a>
-    </div>
-</div>
-      </section>
+          </section>
+        ))}
       {/* /* end testimonial */}
       <section className="contact-bg">
         <div className="container3">
@@ -301,6 +259,7 @@ const Team_child = () => {
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );

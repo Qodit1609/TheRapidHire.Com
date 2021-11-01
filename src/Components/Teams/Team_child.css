@@ -115,7 +115,7 @@
       rgb(159, 162, 168, 0.5),
       hsla(253, 74%, 33%, 0.5)
     ),
-    url("../../assets/images/contact.jpg") no-repeat;
+    url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-14-54.976Zdevelop.jpg") no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -391,6 +391,7 @@
 
 #team_child .carousel-caption img {
   width: 6rem;
+  height: 6rem;
   border-radius: 5rem;
   margin-top: 2rem;
 }

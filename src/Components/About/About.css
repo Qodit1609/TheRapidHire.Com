@@ -4,7 +4,8 @@
       rgb(159, 162, 168, 0.5),
       hsla(253, 74%, 33%, 0.5)
     ),
-    url(""), no-repeat, center center fixed;
+    url("https://therapidhiredev.herokuapp.com/banner/2021-10-21T09-07-25.574Zservice-bg.jpg"),
+    no-repeat, center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -144,7 +145,7 @@
   text-align: center;
   padding: 5px 40px;
   border-radius: 20px;
-  border: 2px solid #4CBCEC;
+  border: 2px solid #4cbcec;
   margin: 50px 0px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -157,29 +158,27 @@
 
 #about .contact-description button:hover {
   color: #fff;
-  background: #4CBCEC;
+  background: #4cbcec;
 }
 
-#about .read-more-less--more{
+#about .read-more-less--more {
   color: #003380 !important;
   font-weight: 900;
 }
 
-#about .read-more-less--less{
+#about .read-more-less--less {
   color: #003380 !important;
   font-weight: 900;
 }
-
 
 @media only screen and (max-width: 450px) {
-#about .who-we h1 {
-  text-align: center;
-}
+  #about .who-we h1 {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 990px) {
   #about .who-we h1 {
     text-align: center;
   }
-  }
-
+}

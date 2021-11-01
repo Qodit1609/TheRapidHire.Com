@@ -56,7 +56,7 @@ li {
       rgb(159, 162, 168, 0.5),
       hsla(253, 74%, 33%, 0.5)
     ),
-    url("../../assets/images/contact.jpg") no-repeat;
+    url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-10-18.467Zdevelop1.jpg") no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
