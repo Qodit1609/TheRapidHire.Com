@@ -11,8 +11,8 @@ const Contact_child = () => {
   const [value, setValue] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null==0);
+  const [email, setEmail] = useState(null==0);
   const [message, setMessage] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,6 +106,7 @@ const Contact_child = () => {
                           placeholder="Name"
                           required
                           value={name || ""}
+
                           onChange={handleChange}
                         />
                       </div>

@@ -38,25 +38,17 @@ const Features_Child = () => {
       <Header />
       {value &&
         value.slice(2, 3).map((data1, index) => (
-      <div className="service-bg cover-background"  
-      // style={{
-      //   backgroundImage:
-      //     'url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-10-18.467Zdevelop1.jpg")',
-       
-      // }}
-      >
-        <div className="container h-100">
-          <div className="row h-100 align-items-center" key={index}>
-            <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 className="fw-light">{data1.title}</h1>
-              <p className="lead">
-              {data1.description}
-              </p>
+          <div className="service-bg cover-background">
+            <div className="container h-100">
+              <div className="row h-100 align-items-center" key={index}>
+                <div className="col-12 text-center" data-aos="zoom-in">
+                  <h1 className="fw-light">{data1.title}</h1>
+                  <p className="lead">{data1.description}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-       ))}
+        ))}
       {data &&
         data.map((data, index) =>
           index % 2 == 0 ? (

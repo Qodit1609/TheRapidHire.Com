@@ -12,6 +12,10 @@ import Career from "./Components/Career/Career";
 import Apply from "./Components/Apply/Apply";
 import Terms from "./Components/Terms/Terms";
 import Policy from "./Components/Policy/Policy";
+import HR_Dashboard from "./Admin/hr/HR_Dashboard";
+import SalesDashboard from "./Admin/sales/SalesDashboard";
+import AdminMain from "./Admin/AdminMain";
+import Login from "./Admin/Login";
 
 function App() {
   let [loaded, setLoaded] = useState(true);
@@ -41,6 +45,11 @@ function App() {
             <Route exact path="/terms" component={Terms}></Route>
             <Route exact path="/policy" component={Policy}></Route>
             <Route exact path="/technology"component={Technology_child}></Route>
+            <Route exact path="/hr"component={HR_Dashboard}></Route>
+            <Route exact path="/sales"component={SalesDashboard}></Route>
+            <Route exact path="/admin"component={AdminMain}></Route>
+            <Route exact path="/login"component={Login}></Route>
+
           </Router>
         </div>
       )}
