@@ -8,11 +8,7 @@ import Ricon2 from "../../assets/images/jquery.png";
 import Ricon3 from "../../assets/images/vue.png";
 import Ricon4 from "../../assets/images/bootstrap.png";
 import Ricon5 from "../../assets/images/ember.png";
-import java1 from "../../assets/images/javaicon.png";
-import java2 from "../../assets/images/php4.png";
-import java3 from "../../assets/images/mango-db.png";
-import java4 from "../../assets/images/wordpress.png";
-import java6 from "../../assets/images/iot.png";
+
 import iot1 from "../../assets/images/azure.png";
 import iot2 from "../../assets/images/cloud-tech.png";
 import iot3 from "../../assets/images/vue.png";
@@ -36,6 +32,7 @@ const Technology_child = () => {
   const [data, setData] = useState("");
   const [value, setValue] = useState([]);
   const [content, setContent] = useState([]);
+  const [value1, setValue1] = useState([]);
 
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
@@ -68,7 +65,15 @@ const Technology_child = () => {
     window.scrollTo(0, 0);
   }, []);
   console.log("Show the data", content);
-
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/footerBanner")
+      .then((res) => {
+        setValue1(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data", value1);
   return (
     <div id="technology_child">
       <Header />
@@ -358,15 +363,17 @@ const Technology_child = () => {
           </section>
         ))}
       <section className="contact-bg">
-        <div className="container3">
+      {value1 &&
+        value1.map((data1, index) => (
+        <div className="container">
           <div className="contact-description">
             <h1>
-              Get in touch with us and discuss the needs and requirements of
-              your Website Development project.
+              {data1.title}
             </h1>
             <button type="button">Contact Us</button>
           </div>
         </div>
+        ))}
       </section>
 
       <Footer />

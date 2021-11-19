@@ -1,6 +1,6 @@
-#login{
-    background-color: rgb(228, 229, 247);
-}
+  /* #login{
+      background-color: rgb(228, 229, 247);
+  } */
 #login .card {
     font-family: sans-serif;
     width: 300px;
@@ -60,4 +60,8 @@
   #login .forget-pass {
     text-align: center;
     display: block;
+  }
+
+  #hr .table-contain{
+    padding-top: 100px;
   }

@@ -17,7 +17,7 @@
   font-weight: 300;
 }
 
-#compony .componies {
+#compony .company-bg {
   padding: 30px;
   border: 1px solid #cecece;
   align-items: center;
@@ -32,7 +32,7 @@
 #compony .compony_row {
   padding-top: 30px;
 }
-#compony .componies img {
+#compony .company-bg img {
   max-width: 100%;
   filter: grayscale(100%);
   transition: all 0.3s;

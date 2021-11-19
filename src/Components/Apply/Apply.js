@@ -7,6 +7,7 @@ import "./Apply.css";
 
 const Apply = () => {
   const [value, setValue] = useState([]);
+  const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
   const [name, setName] = useState("");
@@ -17,6 +18,9 @@ const Apply = () => {
   const [upload, setFile] = useState("");
   const history = useHistory();
 
+  const[isJava,setIsJava]=useState("block")
+const[isMern,setIsMern]=useState('none')
+const [isMean,  setIsMean]=useState('none')
   async function applynow() {
     console.warn(name, email, phone_number, technology, description, upload);
     const formData = {
@@ -40,6 +44,39 @@ const Apply = () => {
     window.scrollTo(0, 0);
   }, []);
   console.log("Show the data here===>>>>>>>>>>>>", value);
+
+
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/excitedWorkUs").then((resp) => {
+      setValue1(resp.data);
+    });
+
+    window.scrollTo(0, 0);
+  }, []);
+  
+
+
+  console.log("Show **the data here*****************************************", value1);
+ 
+  useEffect(()=>{
+    if(value1?.profileName=="Java Developer"){
+      setIsJava('block')
+      setIsMern('none')
+      setIsMean('none')
+    }
+  },[])
+
+  const lang = (evt) => {
+    // evt.target.id
+    if (evt.target.id === 'Java Developer') {
+     setIsJava('block')
+     setIsMern("none")
+     setIsMean("none")
+    }
+  };
+
+
+
   return (
     <div id="apply">
       <Header />
@@ -54,7 +91,7 @@ const Apply = () => {
           >
             <div className="container h-100">
               <div className="row h-100 align-items-center" key={index}>
-                <div className="col-12 text-center" data-aos="zoom-in">
+                <div className="col-12 text-center" data-aos="zoom-in" onKeyPress={lang}>
                   <h1 className="fw-light">{data1.title}</h1>
                   <p className="lead">{data1.description}</p>
                 </div>
@@ -65,35 +102,31 @@ const Apply = () => {
       <section class="apply-sec text-center login-block">
         <div class="container d-flex justify-content-center">
           <div class="form">
+        
+          
             <div class="contact-info">
-              <h3 id="summernote" class="listHeading">
-                Java Developer
+          {value1 &&
+        value1.map((value, index) =>(
+          <div>
+              <h3 id="summernote" class="listHeading" key={index}>
+                {value.profileName== "Java Developer"? value.profileName 
+                : value.profileName =="MEAN Stack Developer" ? value.profileName 
+                :"MERN Stack Developer"
+              }
               </h3>
               <ul class="listForJob">
                 <ul>
                   <li>
-                    in core Java advanced programming. Experience in Spring &
-                    Hibernate is mandatory. Experience in building mechanisms
-                    like Maven. Good knowledge on design patterns and
-                    anti-patterns. Good in algorithms and data structures.
-                    <li>
-                      {" "}
-                      Good understanding of Database concepts and Experience in
-                      SQL, PLSQL and NoSQL. Excellent Analytical and program
-                      solving skills Excellent written and oral communication
-                      skills self-starter and highly motivated Work in a dynamic
-                      environment and ability to adapt quickly to changes.
+                    {value.content}
                     </li>
-                    <li>
-                      Experience with Test and defect management tools. An
-                      innovator, always suggesting newer ways of improving
-                      Productivity. Mentor and train team members. Identify and
-                      escalate Risks on time and suggest mitigation measures.
-                    </li>
-                  </li>
+                 
                 </ul>
               </ul>
+              </div>
+              ))}
+           
             </div>
+      
             <div class="contact-info-form">
               {" "}
               <span class="circle one"></span> <span class="circle two"></span>

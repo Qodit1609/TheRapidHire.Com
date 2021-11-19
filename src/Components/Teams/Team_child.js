@@ -21,6 +21,7 @@ const Team_child = () => {
   const [value, setValue] = useState([]);
   const [value2, setValue2] = useState([]);
   const [value3, setValue3] = useState([]);
+  const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
 
@@ -59,6 +60,15 @@ const Team_child = () => {
     window.scrollTo(0, 0);
   }, []);
   console.log("show the data==>>>", value3);
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/footerBanner")
+      .then((res) => {
+        setValue1(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data", value1);
   return (
     <div id="team_child">
       <Header />
@@ -249,15 +259,15 @@ const Team_child = () => {
         ))}
       {/* /* end testimonial */}
       <section className="contact-bg">
-        <div className="container3">
-          <div className="contact-description">
-            <h1>
-              Get in touch with us and discuss the needs and requirements of
-              your Website Development project.
-            </h1>
-            <button type="button">Contact Us</button>
-          </div>
-        </div>
+        {value1 &&
+          value1.map((data1, index) => (
+            <div className="container">
+              <div className="contact-description">
+                <h1>{data1.title}</h1>
+                <button type="button">Contact Us</button>
+              </div>
+            </div>
+          ))}
       </section>
 
       <Footer />

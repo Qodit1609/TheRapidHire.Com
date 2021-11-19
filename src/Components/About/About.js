@@ -3,14 +3,7 @@ import ReactReadMoreReadLess from "react-read-more-read-less";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
-import WhoWe from "../../assets/images/about.png";
-import Mission from "../../assets/images/mission.png";
-import Vision from "../../assets/images/vision.png";
-import Values from "../../assets/images/value.png";
-import Creativity from "../../assets/images/creativity.png";
-import Meeting from "../../assets/images/meeting.png";
-import Success from "../../assets/images/success.png";
-import Client from "../../assets/images/client.png";
+
 import axios from "axios";
 import "./About.css";
 import AOS from "aos";
@@ -19,6 +12,7 @@ AOS.init();
 const About = () => {
   const [data, setData] = useState("");
   const [value, setValue] = useState([]);
+  const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
 
@@ -38,15 +32,15 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
   console.log("second", data);
-  const Our_Vision =
-    " TheRapidHire Pvt Ltd.  will inspire its employees to be the best they can be. We will engage in sustainable practices and anticipate the needs of our customers.   Our vision is to bring our employees into the 21st century through innovation and modern technology. Learning will be enhanced with computer software and all technologies that will allow employees to proceed at their own rate according to their ability. ";
-
-  const Our_Mission =
-    "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. TheRapidHire has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
-
-  const Values3 =
-    "Having clear company values helps us ensure that all our employees are working towards the same goals. Our core values support the company's vision and shape its culture. That's why our business decision should be aligned with these values. ";
-
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/footerBanner")
+      .then((res) => {
+        setValue1(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data", value1);
   return (
     <div id="about">
       <Header />
@@ -145,17 +139,15 @@ const About = () => {
           </section>
         ))}
       <section className="contact-bg">
-        <div className="container">
-          <div className="contact-description">
-            <h1>
-              Get in touch with us and discuss the needs and requirements of
-              your Website Development project.
-            </h1>
-            <button type="button">
-              <Link to="contact_child">Contact Us</Link>
-            </button>
-          </div>
-        </div>
+        {value1 &&
+          value1.map((data1, index) => (
+            <div className="container">
+              <div className="contact-description">
+                <h1>{data1.title}</h1>
+                <button type="button">Contact Us</button>
+              </div>
+            </div>
+          ))}
       </section>
       <Footer />
     </div>

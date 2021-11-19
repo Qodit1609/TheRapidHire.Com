@@ -1,184 +1,122 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-
 const Footer = () => {
+  const [data, setData] = useState("");
+  const [value,setValue] = useState("");
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/footer").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("second", data);
+  useEffect(() => {
+    axios
+      .get("https://therapidhiredev.herokuapp.com/copyRight")
+      .then((res) => {
+        setValue(res.data);
+      });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data==>>>", value);
   return (
     <div id="footer">
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
-              <ul>
-                <li>
-                  <h3>Quick Link</h3>
-                </li>
-                <li>
-                  <Link to="/">
-                    <i className="fas fa-angle-right"></i>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about">
-                    <i className="fas fa-angle-right"></i>
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Technology">
-                    <i className="fas fa-angle-right"></i>
-                    Technology
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/features">
-                    <i className="fas fa-angle-right"></i>
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/team">
-                    <i className="fas fa-angle-right"></i>
-                    Team
-                  </Link>
-                </li>
-              </ul>
+              {data &&
+                data.slice(0, 1).map((data1, index) => (
+                  <ul>
+                    <li>
+                      <h3>{data1.title}</h3>
+                    </li>
+                    {data1.links.map((data2, index) => {
+                      let valueArray = data1.valueArray;
+                      return (
+                        <li>
+                          <Link to={valueArray[index]}>
+                            <i className="fas fa-angle-right"></i>
+                            {data2}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ))}
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
-              <ul>
-                <li>
-                  <h3>Services</h3>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    System Development
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Web Devlopment
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Data Engineering
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Cloud Service
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <i className="fas fa-angle-right"></i>
-                    Web Designer
-                  </Link>
-                </li>
-              </ul>  
+              {data &&
+                data.slice(1, 2).map((data1, index) => (
+                  <ul>
+                    <li>
+                      <h3>{data1.title}</h3>
+                    </li>
+                    {data1.links.map((data2, index) => (
+                      <li>
+                        <Link to="/services">
+                          <i className="fas fa-angle-right"></i>
+                          {data2}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
-              <ul>
-                <li>
-                  <h3>General Link</h3>
-                </li>
-                <li>
-                  <Link to="/terms">
-                    <i className="fas fa-angle-right"></i>
-                    Terms & Condition
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/policy">
-                    <i className="fas fa-angle-right"></i>
-                    Privacy policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact_child">
-                    <i className="fas fa-angle-right"></i>
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-              <div class="footer-social-icn">
-                <li>
-                  <a
-                    href="https://www.facebook.com/The-Rapid-Hire-Pvt-Ltd-103302021496799/?modal=admin_todo_tour"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    <i class="fab fa-facebook"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/The-Rapid-Hire-Pvt-Ltd-103302021496799/?modal=admin_todo_tour" 
-                  target="_blank" rel="nofollow">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/therapidhire/"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                {/* <li>
-                  <a href="" target="_blank" rel="nofollow">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li> */}
-              </div>
+              {data &&
+                data.slice(2, 3).map((data1, index) => (
+                  <ul>
+                    <li>
+                      <h3>{data1.title}</h3>
+                    </li>
+                    {data1.links.map((data2, index) => {
+                      let valueArray = data1.valueArray;
+                      return (
+                        <li>
+                          <Link to={valueArray[index]}>
+                            <i className="fas fa-angle-right"></i>
+                            {data2}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ))}
             </div>
           </div>
           <div className="col-lg-3 col-sm-6">
             <div className="footer_content">
-              <ul>
-                <li>
-                  <h3>Contact Info</h3>
-                </li>
-                <li>
-                  <div className="icon">
-                    <i className="fas fa-home"></i>
-                  </div>
-                  <div className="info">
-                    <h5>WEBSITE:</h5>
-                    <a href="https://therapidhire.com">therapidhire.com</a>
-                  </div>
-                </li>
-                <li>
-                  <div className="icon">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <div className="info">
-                    <h5>Email:</h5>
-                    <a href="mailto:sales@therapidhire.com">
-                      sales@therapidhire.com
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div className="icon">
-                    <i className="fas fa-phone"></i>
-                  </div>
-                  <div className="info">
-                    <h5>Phone:</h5>
-                    <a href="tel:+1 (917) 628 2406">+1 (917) 628 2406</a>
-                  </div>
-                </li>
-              </ul>
+              {data &&
+                data.slice(3, 4).map((data1, index) => (
+                  <ul>
+                    <li>
+                      <h3>{data1.title}</h3>
+                    </li>
+                    {data1.links.map((data2, index) => {
+                      let valueArray = data1.valueArray;
+                      let icon = data1.icon;
+                      let links = data1.links;
+                      return (
+                    <li>
+                      <div className="icon">
+                        <i className={icon[index]}></i>
+                      </div>
+                      <div className="info">
+                        <h5>{links[index]}</h5>
+                        <Link to={valueArray[index]}>{valueArray[index]}</Link>
+                      </div>
+                    </li>
+              );
+               })}
+                  </ul>
+                ))}
             </div>
           </div>
         </div>
@@ -186,16 +124,19 @@ const Footer = () => {
       <div class="bottom-footer">
         <div class="container">
           <div class="copyright">
+          {value &&
+          value.map((data1, index) => (
             <div class="container">
               <div class="row">
                 <div class="col-xs-12 text-center">
                   <p>
-                    © 2021 The Rapid Hire Pvt. Ltd{" "}
-                    <span> All Rights Reserved.</span>
+                  {data1.title}
+                    
                   </p>
                 </div>
               </div>
             </div>
+          ))}
           </div>
         </div>
       </div>

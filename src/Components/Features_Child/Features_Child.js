@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Features_Child.css";
-import webdesign from "../../assets/images/web2.png";
-import webdesign2 from "../../assets/images/design-feature.png";
-import webdesign3 from "../../assets/images/teamlead.png";
-import webdesign4 from "../../assets/images/2.png";
+
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,6 +10,7 @@ AOS.init();
 const Features_Child = () => {
   const [data, setData] = useState("");
   const [value, setValue] = useState([]);
+  const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
 
@@ -32,7 +30,13 @@ const Features_Child = () => {
     window.scrollTo(0, 0);
   }, []);
   console.log("second", data);
-
+  useEffect(() => {
+    axios.get("https://therapidhiredev.herokuapp.com/footerBanner").then((res) => {
+      setValue1(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("show the data", value1);
   return (
     <div id="fech">
       <Header />
@@ -91,16 +95,18 @@ const Features_Child = () => {
             </section>
           )
         )}
-      <section className="contact-bg">
+       <section className="contact-bg">
+      {value1 &&
+        value1.map((data1, index) => (
         <div className="container">
           <div className="contact-description">
             <h1>
-              Get in touch with us and discuss the needs and requirements of
-              your Website Development project.
+              {data1.title}
             </h1>
             <button type="button">Contact Us</button>
           </div>
         </div>
+        ))}
       </section>
       <Footer />
     </div>

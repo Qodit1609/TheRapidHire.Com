@@ -56,7 +56,7 @@ li {
       rgb(159, 162, 168, 0.5),
       hsla(253, 74%, 33%, 0.5)
     ),
-    url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-10-18.467Zdevelop1.jpg") no-repeat;
+    url("https://therapidhiredev.herokuapp.com/banner/2021-11-09T11-49-56.694Zcontact.jpg") no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -105,7 +105,7 @@ li {
       rgb(159, 162, 168, 0.5),
       hsl(14deg 2% 4% / 50%)
     ),
-    url("../../assets/images/develop1.jpg"), no-repeat, center center fixed;
+    url("https://therapidhiredev.herokuapp.com/banner//2021-10-21T09-10-18.467Zdevelop1.jpg"), no-repeat, center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
