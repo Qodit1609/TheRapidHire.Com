@@ -1235,25 +1235,31 @@ const AdminMain = ({
 
             <div class="modal-body">You can Edit content here</div>
             <div class="ms-3">
-              <label for="fname">First Name:</label>
+              <label for="fname">First Title</label>
               <input
+                class=""
                 type="text"
-                class="form-control"
+                name="title"
                 placeholder="Enter name"
+                id=""
               />
 
-              <label for="fname">First Name:</label>
+              <label for="fbody">First Body:</label>
               <input
+                class=""
                 type="text"
-                class="form-control"
-                placeholder="Enter name"
+                name="body"
+                placeholder="Enter body text"
+                id=""
               />
 
-              <label for="fname">First Name:</label>
+              <label for="fdesc">First Description:</label>
               <input
+                class=""
                 type="text"
-                class="form-control"
-                placeholder="Enter name"
+                name="description"
+                placeholder="Enter description"
+                id=""
               />
             </div>
 
@@ -1329,7 +1335,7 @@ const AdminMain = ({
               <div class="ms-3">
                 <label for="fname">First Title</label>
                 <input
-                  class="form-control"
+                  class=""
                   type="text"
                   name="title"
                   placeholder="Enter name"
@@ -1338,7 +1344,7 @@ const AdminMain = ({
 
                 <label for="fbody">First Body:</label>
                 <input
-                  class="form-control"
+                  class=""
                   type="text"
                   name="body"
                   placeholder="Enter body text"
@@ -1347,7 +1353,7 @@ const AdminMain = ({
 
                 <label for="fdesc">First Description:</label>
                 <input
-                  class="form-control"
+                  class=""
                   type="text"
                   name="description"
                   placeholder="Enter description"

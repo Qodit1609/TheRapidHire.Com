@@ -26,6 +26,7 @@ import axios from "axios";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 AOS.init();
 
 const Technology_child = () => {
@@ -136,38 +137,7 @@ const Technology_child = () => {
                         height="80px"
                       />
                     </div>
-                    {/* <div className="item">
-                  <img
-                    src={content.image}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={content.image}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div>
-                <div className="item">
-                  <img
-                    src={content.image}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div> */}
-                    {/* <div className="item">
-                  <img
-                    src={content.image}
-                    className="image1"
-                    width="100px"
-                    height="80px"
-                  />
-                </div> */}
+                   
                   </div>
                   <div className="items-container roll-RL">
                     <div className="item">
@@ -309,7 +279,7 @@ const Technology_child = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="end-roller"></div> */}
+               
               </div>
             </div>
           </section>
@@ -370,7 +340,9 @@ const Technology_child = () => {
             <h1>
               {data1.title}
             </h1>
-            <button type="button">Contact Us</button>
+            <button type="button">
+              <Link to="contact_child">Contact Us</Link>
+            </button>
           </div>
         </div>
         ))}

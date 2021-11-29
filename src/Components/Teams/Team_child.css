@@ -134,6 +134,10 @@
   color: #fff;
   font-weight: bolder;
 }
+#team_child .contact-description button a {
+  text-decoration: none;
+  color: #fff !important;
+}
 #team_child .contact-description button {
   background: transparent;
   color: #fff;

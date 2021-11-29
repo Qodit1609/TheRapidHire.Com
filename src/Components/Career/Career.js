@@ -262,17 +262,7 @@ const Career = () => {
                           <div className='hire'>
                             <div class='vacancy-box'>
                               <h4>{value.profileName}</h4>
-                              {/* <h4>
-                            {
-                            value.profileName=="Java Developer"
-                            ?isJava
-                            :value.profileName=="MEAN Stack Developer"
-                            ? isMean
-                            :value.profileName=="MERN Stack Developer"
-                            ?isMern
-                            :'block'
-                         }
-                          </h4> */}
+                             
                               <p>{value.experience}</p>
                               <p class='location'>
                                 <img
@@ -312,17 +302,7 @@ const Career = () => {
                           <div className='hire'>
                             <div class='vacancy-box'>
                               <h4>{value.profileName}</h4>
-                              {/* <h4>
-                            {
-                            value.profileName=="Java Developer"
-                            ?isJava
-                            :value.profileName=="MEAN Stack Developer"
-                            ? isMean
-                            :value.profileName=="MERN Stack Developer"
-                            ?isMern
-                            :'block'
-                         }
-                          </h4> */}
+
                               <p>{value.experience}</p>
                               <p class='location'>
                                 <img

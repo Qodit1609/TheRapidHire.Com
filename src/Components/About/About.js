@@ -144,7 +144,9 @@ const About = () => {
             <div className="container">
               <div className="contact-description">
                 <h1>{data1.title}</h1>
-                <button type="button">Contact Us</button>
+                <button type="button">
+              <Link to="contact_child">Contact Us</Link>
+            </button>
               </div>
             </div>
           ))}

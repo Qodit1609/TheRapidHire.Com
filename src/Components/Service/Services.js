@@ -5,6 +5,7 @@ import "./services.css";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 AOS.init();
 
 const Services = () => {
@@ -104,7 +105,9 @@ const Services = () => {
             <h1>
               {data1.title}
             </h1>
-            <button type="button">Contact Us</button>
+            <button type="button">
+              <Link to="contact_child">Contact Us</Link>
+            </button>
           </div>
         </div>
         ))}
