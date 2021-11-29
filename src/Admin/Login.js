@@ -24,7 +24,7 @@ const Login = () => {
         setMessage(data.message);
         setData(data.data);
         setError(false);
-        let pathAdmin = `/admin`;
+        let pathAdmin = `/admin/dashboard`;
         let pathHR = `/hr`;
         let pathSales = `/sales`;
         if (data.roleName == "hr") {

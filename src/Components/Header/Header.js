@@ -35,18 +35,19 @@ const Header = () => {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto flex-nowrap " id="navList">
                 <li class="nav-item">
-                  {data &&
+                  
+                     {data &&
                     data.slice(0, 1).map((data1, index) => (
-                      <NavLink exact activeClassName="active" to="services">
+                      <NavLink exact activeClassName="active" to="about">
                         {data1.title}
                       </NavLink>
                     ))}
                 </li>
 
                 <li class="nav-item">
-                  {data &&
+                {data &&
                     data.slice(1, 2).map((data1, index) => (
-                      <NavLink exact activeClassName="active" to="about">
+                      <NavLink exact activeClassName="active" to="services">
                         {data1.title}
                       </NavLink>
                     ))}

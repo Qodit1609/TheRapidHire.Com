@@ -3,16 +3,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./Team_child.css";
 import axios from "axios";
-import webdesign from "../../assets/images/teamlead.png";
-import s2 from "../../assets/images/Shraddhha.jpg";
-import s3 from "../../assets/images/pp.jpg";
-import s4 from "../../assets/images/Nitin.jpg";
-import s5 from "../../assets/images/avinash.jpeg";
-import s6 from "../../assets/images/ankita.jpeg";
-import s7 from "../../assets/images/krishana.jpeg";
-import client from "../../assets/images/1(cleints).jpg";
-import client1 from "../../assets/images/3.jpg";
-import client2 from "../../assets/images/2(client).jpg";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -74,10 +65,7 @@ const Team_child = () => {
       <Header />
       {value &&
         value.slice(4, 5).map((data1, index) => (
-          <div
-            className="service-bg cover-background"
-           
-          >
+          <div className="service-bg cover-background">
             <div className="container h-100">
               <div className="row h-100 align-items-center">
                 <div className="col-12 text-center" data-aos="zoom-in">

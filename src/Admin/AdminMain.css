@@ -78,7 +78,7 @@
     padding: 10px !important;
 }
 
-#admin #sidebar.active .dropdown-toggle::after {
+#admin #sidebar .active .dropdown-toggle::after {
     top: auto;
     bottom: 10px;
     right: 50%;
@@ -110,7 +110,7 @@
 }
 
 #admin #sidebar ul li a:hover {
-    color: #000 !important;
+    color: #333 !important;
     background: #fff;
 }
 
@@ -139,8 +139,10 @@
 #admin ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
-}
+    background-color: #8b9299 !important;
+    color:#333 ;
+ }
+
 
 #admin ul.CTAs {
     padding: 20px;
@@ -161,8 +163,7 @@
 
 #admin a.article,
 #admin a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
+    background-color: rgb(157, 157, 158) !important;    color: #fff !important;
 }
 
 #admin #sidebarCollapse{
@@ -264,4 +265,8 @@ li.dropdown-user .dropdown-toggle > .username {
 }
 li.dropdown-user .dropdown-menu {
     width: 175px;
+}
+
+#admin .modal-header {
+   border:  none  !important;
 }
