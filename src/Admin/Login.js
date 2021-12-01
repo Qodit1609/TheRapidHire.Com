@@ -35,6 +35,8 @@ const Login = () => {
           history.push(pathAdmin);
         } else {
         }
+        localStorage.setItem('myData',data.roleName);
+        window.location.reload()
       })
       .catch(function (error) {
         setError(true);

@@ -28,8 +28,8 @@ const Dashboard = () => {
   const [selectedMenuItemName, setselectedMenuItemName] = useState(null);
   const [currentDeleteListId, setCurrentDeleteListId] = useState(null);
   const API = "https://therapidhiredev.herokuapp.com";
-  useEffect(() => {
-    async function getDataFromServer() {
+  useEffect( async () => {
+    
       const { data: navBar } = await axios.get(`${API}/navbar/`);
       setNavBar(navBar);
       console.log("navBar: ", navBar);
@@ -75,9 +75,9 @@ const Dashboard = () => {
       setExcited(excited);
       const { data: experience } = await axios.get(`${API}/teams/`);
       setExperience(experience);
-    }
-    getDataFromServer();
+     
   }, []);
+ 
   const addNewData = (title, body, alt, name) => {
     const data = {
       title: title,

@@ -9,6 +9,7 @@ const { location } = window;
 const HR_Dashboard = () => {
   let history = useHistory();
   const handleMenuClose = () => {
+    localStorage.clear('myData');
     history.push("/login");
     location.reload();
   };

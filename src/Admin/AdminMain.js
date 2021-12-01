@@ -239,6 +239,7 @@ const AdminMain = ({
   const { location } = window;
   let history = useHistory();
   const handleMenuClose = () => {
+    localStorage.clear('myData');
     history.push("/login");
     location.reload();
   };
@@ -1235,31 +1236,25 @@ const AdminMain = ({
 
             <div class="modal-body">You can Edit content here</div>
             <div class="ms-3">
-              <label for="fname">First Title</label>
+              <label for="fname">First Name:</label>
               <input
-                class=""
                 type="text"
-                name="title"
+                class="form-control"
                 placeholder="Enter name"
-                id=""
               />
 
-              <label for="fbody">First Body:</label>
+              <label for="fname">First Name:</label>
               <input
-                class=""
                 type="text"
-                name="body"
-                placeholder="Enter body text"
-                id=""
+                class="form-control"
+                placeholder="Enter name"
               />
 
-              <label for="fdesc">First Description:</label>
+              <label for="fname">First Name:</label>
               <input
-                class=""
                 type="text"
-                name="description"
-                placeholder="Enter description"
-                id=""
+                class="form-control"
+                placeholder="Enter name"
               />
             </div>
 
@@ -1335,7 +1330,7 @@ const AdminMain = ({
               <div class="ms-3">
                 <label for="fname">First Title</label>
                 <input
-                  class=""
+                  class="form-control"
                   type="text"
                   name="title"
                   placeholder="Enter name"
@@ -1344,7 +1339,7 @@ const AdminMain = ({
 
                 <label for="fbody">First Body:</label>
                 <input
-                  class=""
+                  class="form-control"
                   type="text"
                   name="body"
                   placeholder="Enter body text"
@@ -1353,7 +1348,7 @@ const AdminMain = ({
 
                 <label for="fdesc">First Description:</label>
                 <input
-                  class=""
+                  class="form-control"
                   type="text"
                   name="description"
                   placeholder="Enter description"

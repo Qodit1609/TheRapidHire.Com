@@ -12,21 +12,20 @@ import Career from "./Components/Career/Career";
 import Apply from "./Components/Apply/Apply";
 import Terms from "./Components/Terms/Terms";
 import Policy from "./Components/Policy/Policy";
-import HR_Dashboard from "./Admin/hr/HR_Dashboard";
-import SalesDashboard from "./Admin/sales/SalesDashboard";
 // import AdminMain from "./Admin/AdminMain";
 import Login from "./Admin/Login";
 import axios from "axios";
 import Reset from "./Admin/Reset";
 import Forgot from "./Admin/Forgot";
 import Otp from "./Admin/Otp";
-import Dashboard from "./Admin/dashboard";
+import ProtectedRoute from "./ProtectedRoutes";
+
 
 
 function App() {
   const [navBar, setNavBar] = useState(null);
   let [loaded, setLoaded] = useState(true);
-
+  const userRole = localStorage.getItem('myData')
   setTimeout(() => {
     setLoaded(false);
   }, 2000);
@@ -37,10 +36,11 @@ function App() {
       setNavBar(navBar);
     }
     getDataFromServer();
+  
   }, []);
   return (
     <div>
-      
+     
       {loaded ? (
         <div className="loader">
           <div></div>
@@ -61,20 +61,13 @@ function App() {
             <Route exact path="/terms" component={Terms}></Route>
             <Route exact path="/policy" component={Policy}></Route>
             <Route exact path="/technology"component={Technology_child}></Route>
-            <Route exact path="/hr"component={HR_Dashboard}></Route>
-            <Route exact path="/sales"component={SalesDashboard}></Route>
-            {/* <Route exact path="/admin"component={AdminMain}></Route> */}
             <Route exact path="/login"component={Login}></Route>
             <Route exact path="/reset"component={Reset}></Route>
             <Route exact path="/forgot"component={Forgot}></Route>
             <Route exact path="/otp"component={Otp}></Route>
-            <Route exact path="/admin/dashboard"component={Dashboard}></Route>
-
-           
-          </Router>
-     
-        </div>
-        
+            <ProtectedRoute></ProtectedRoute>
+          </Router>    
+        </div>      
    )}
     </div>
   );
