@@ -18,7 +18,9 @@ import axios from "axios";
 import Reset from "./Admin/Reset";
 import Forgot from "./Admin/Forgot";
 import Otp from "./Admin/Otp";
-import ProtectedRoute from "./ProtectedRoutes";
+import Dashboard from "./Admin/dashboard";
+import HR_Dashboard from "./Admin/hr/HR_Dashboard";
+import SalesDashboard from "./Admin/sales/SalesDashboard";
 
 
 
@@ -65,7 +67,9 @@ function App() {
             <Route exact path="/reset"component={Reset}></Route>
             <Route exact path="/forgot"component={Forgot}></Route>
             <Route exact path="/otp"component={Otp}></Route>
-            <ProtectedRoute></ProtectedRoute>
+            <Route exact path="/admin/dashboard" component={Dashboard}></Route>
+            <Route exact path="/hr" component={HR_Dashboard}></Route>
+            <Route exact path="/sales" component={SalesDashboard}></Route>
           </Router>    
         </div>      
    )}

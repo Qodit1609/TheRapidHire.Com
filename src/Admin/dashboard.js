@@ -1,5 +1,6 @@
 import React from "react-router";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import AdminMain from "./AdminMain";
 const Dashboard = () => {
@@ -27,9 +28,15 @@ const Dashboard = () => {
   const [selectedMenuItemId, setselectedMenuItemId] = useState(null);
   const [selectedMenuItemName, setselectedMenuItemName] = useState(null);
   const [currentDeleteListId, setCurrentDeleteListId] = useState(null);
+  const history = useHistory();
   const API = "https://therapidhiredev.herokuapp.com";
   useEffect( async () => {
-    
+    const isAuthenticated = localStorage.getItem("myData");
+      if(isAuthenticated != "admin"){
+        history.push('/login');
+      }else{
+        history.push('/admin/dashboard');
+      }
       const { data: navBar } = await axios.get(`${API}/navbar/`);
       setNavBar(navBar);
       console.log("navBar: ", navBar);

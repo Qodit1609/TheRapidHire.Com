@@ -15,6 +15,12 @@ const HR_Dashboard = () => {
   };
   const [data, setData] = useState("");
   useEffect(() => {
+    const isAuthenticated = localStorage.getItem("myData");
+      if(isAuthenticated != "hr"){
+        history.push('/login');
+      }else{
+        history.push('/hr');
+      }
     axios.get("https://therapidhiredev.herokuapp.com/applyNow").then((res) => {
       setData(res.data);
     });

@@ -15,6 +15,12 @@ const SalesDashboard = () => {
   };
   const [data, setData] = useState("");
   useEffect(() => {
+    const isAuthenticated = localStorage.getItem("myData");
+    if(isAuthenticated != "sales"){
+      history.push('/login');
+    }else{
+      history.push('/sales');
+    }
     axios.get("https://therapidhiredev.herokuapp.com/contactus").then((res) => {
       setData(res.data);
     });
