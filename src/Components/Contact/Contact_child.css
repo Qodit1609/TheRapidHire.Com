@@ -39,7 +39,7 @@
 }
 
 #contact_child input,
-input.form-control {
+#contact_child  input.form-control {
   border: 1px solid #e4e4e4;
   font-size: 16px;
   height: 55px;
@@ -55,7 +55,7 @@ input.form-control {
 }
 
 #contact_child input[type="checkbox"],
-input.form-control[type="checkbox"] {
+#contact_child  input.form-control[type="checkbox"] {
   margin-top: 0.5rem;
   background: #fff;
   height: auto;

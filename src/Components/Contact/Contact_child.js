@@ -168,8 +168,7 @@ const Contact_child = () => {
                         <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
                         <span>
                           {" "}
-                          ED-3 Scheme no. 97 Ring Road, Near Robot Square,Indore
-                          MP (452016)
+                          51, Electronic Complex, Pardesi Pura Main Road, Electronic Complex, Sukhlia, Indore, Madhya Pradesh 452007
                         </span>
                       </div>
                     </div>

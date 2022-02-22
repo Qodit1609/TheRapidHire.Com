@@ -43,25 +43,98 @@ const AdminMain = ({
   const [homeSubMenu, setHomeSubMenu] = useState(null);
   const [newDeleteId, setNewDeleteId] = useState("");
   const [tab, setTab] = useState("");
+  const [img, imgSet] = useState("");
+
   const [validationError, setValidationError] = useState({
     title: false,
     body: false,
     description: false,
   });
 
+  // const addHere = () => {
+  //   console.log('event clicked')
+  //   document.addForm.submit()
+  // }
+
+  // const handleChange = (e) => {
+  //   console.log("handleChange: ", e);
+  // };
+
   const onSubmit = (event) => {
     event.preventDefault(event);
+    console.log(img);
     const form = event.target;
-    let formObj = {
-      title: form.title.value,
-      body: form.body.value,
-      description: form.description.value,
-    };
+    console.log(event);
+    console.log("submitted form: ", form);
+    // console.log(event.target.files[0]);
+    let finalObj = {};
+
+    if (homeSubMenu === "navBar") {
+      finalObj = {
+        title: form.title.value,
+        logo: img,
+      };
+    } else if (homeSubMenu === "heroBox") {
+      finalObj = {
+        title: form.title.value,
+        // description: form.description.value,
+        imageUrl: form.image.value,
+        alt_tag: form.altTag.value,
+      };
+    }
+    // else if (homeSubMenu === 'story'){
+    //   finalObj = {
+
+    //     title: form.title.value,
+    //     // description: form.description.value,
+
+    //   }
+    // }
+    // else if (homeSubMenu === 'service'){
+    //   finalObj = {
+    //     title: form.title.value,
+    //     // description: form.description.value,
+
+    //   }
+    // }
+
+    console.log("finalObj:", finalObj);
+
+    let bodyFormData = new FormData(); //formdata object
+    // bodyFormData.append("title", form.title.value); //append the values with key, value pair
+
+    // bodyFormData.append("img", img); //append the values with key, value pair
+
+    // console.log(bodyFormData);
+
+
+    Object.keys(finalObj).map((key, index) => {
+      console.log(index, key, finalObj[key]);
+      bodyFormData.append(key, finalObj[key]);
+    });
+
+    // console.log(bodyFormData);
+
+    // const config = {
+    //   headers: { "content-type": "multipart/form-data" },
+    // };
+
+    // axios
+    //   .post(url,formData, config)
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
     axios({
       method: "POST",
-      url: `https://therapidhiredev.herokuapp.com/${homeSubMenu}`,
-      header: "",
-      data: formObj,
+      url: `https://therapidhiredev.herokuapp.com/${homeSubMenu}/`,
+      headers : {
+        "Content-Type": "multipart/form-data",
+      },
+      data:bodyFormData,
     })
       .then((response) => {
         console.log(response);
@@ -95,6 +168,7 @@ const AdminMain = ({
   const [hero_box, setHero_box] = useState(false);
   const [soft_ware, setSoft_ware] = useState(false);
   const [maintitle, setMaintitle] = useState(false);
+
   const [Heads, setHeads] = React.useState(["ID", "Title", "Action"]);
   const heroBoxHeads = [
     "id",
@@ -239,7 +313,7 @@ const AdminMain = ({
   const { location } = window;
   let history = useHistory();
   const handleMenuClose = () => {
-    localStorage.clear('myData');
+    localStorage.clear("myData");
     history.push("/login");
     location.reload();
   };
@@ -249,6 +323,7 @@ const AdminMain = ({
 
   const showItemsIntable = (name) => {
     setHomeSubMenu(name);
+    console.log("homesub", homeSubMenu);
     setselectedMenuItemName(name);
     if (name === "navBar") {
       setHeads(["ID", "Title", "Action"]);
@@ -765,10 +840,12 @@ const AdminMain = ({
 
     console.log("adminShowDataProps: ", adminShowDataProps);
   };
+
   const deleteFunction = (id) => {
     setNewDeleteId(id);
     alert(id);
   };
+
   const deleteRow = () => {
     axios({
       method: "delete",
@@ -777,6 +854,7 @@ const AdminMain = ({
       data: "",
     })
       .then((response) => {
+        window.location.reload(false);
         console.log(response);
       })
       .catch((error) => {
@@ -1236,21 +1314,21 @@ const AdminMain = ({
 
             <div class="modal-body">You can Edit content here</div>
             <div class="ms-3">
-              <label for="fname">First Name:</label>
+              <label for="fname"> Name:</label>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Enter name"
               />
 
-              <label for="fname">First Name:</label>
+              <label for="fname"> Name:</label>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Enter name"
               />
 
-              <label for="fname">First Name:</label>
+              <label for="fname"> Name:</label>
               <input
                 type="text"
                 class="form-control"
@@ -1315,20 +1393,22 @@ const AdminMain = ({
       <div class="modal" id="myModal2">
         <div class="modal-dialog">
           <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Create New Content</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div class="modal-body">You can Create content here</div>
+
             <form onSubmit={onSubmit}>
-              <div class="modal-header">
-                <h4 class="modal-title">Create New Content</h4>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                ></button>
-              </div>
-
-              <div class="modal-body">You can Create content here</div>
-
+              {/* <form name="addForm"> */}
               <div class="ms-3">
-                <label for="fname">First Title</label>
+                {/* title */}
+                <label for="fname"> Title</label>
                 <input
                   class="form-control"
                   type="text"
@@ -1337,23 +1417,246 @@ const AdminMain = ({
                   id=""
                 />
 
-                <label for="fbody">First Body:</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="body"
-                  placeholder="Enter body text"
-                  id=""
-                />
+                {/* logo */}
+                {homeSubMenu === "navBar" && <label for="fdesc"></label>}
+                {homeSubMenu === "navBar" && (
+                  <input
+                    type="file"
+                    name="logo"
+                    onChange={(e) => imgSet(e.target.files[0].name)}
+                  />
+                )}
 
-                <label for="fdesc">First Description:</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="description"
-                  placeholder="Enter description"
-                  id=""
-                />
+                {/* body */}
+                {(homeSubMenu === "software" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "career") && (
+                  <label for="fbody"> Body:</label>
+                )}
+                {(homeSubMenu === "software" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "career") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="body"
+                    placeholder="Enter body text"
+                    id=""
+                  />
+                )}
+
+                {/* description */}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "story" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "software" ||
+                  homeSubMenu === "overview" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career" ||
+                  homeSubMenu === "excited") && (
+                  <label for="fdesc"> Description:</label>
+                )}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "story" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "software" ||
+                  homeSubMenu === "overview" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career" ||
+                  homeSubMenu === "excited") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="description"
+                    placeholder="Enter your description"
+                    id=""
+                  />
+                )}
+
+                {/* content */}
+                {homeSubMenu === "excited" && (
+                  <label for="fbody"> Content:</label>
+                )}
+                {homeSubMenu === "excited" && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="content"
+                    placeholder="Enter your Content"
+                    id=""
+                  />
+                )}
+
+                {/* Main Title */}
+                {(homeSubMenu === "software" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "companyperks") && (
+                  <label for="fbody"> Main Title:</label>
+                )}
+                {(homeSubMenu === "software" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "companyperks") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="mainTitle"
+                    placeholder="Enter your MainTitle"
+                    id=""
+                  />
+                )}
+
+                {/* Class Name */}
+                {homeSubMenu === "companyperks" && (
+                  <label for="fbody"> ClassName:</label>
+                )}
+                {homeSubMenu === "companyperks" && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="className"
+                    placeholder="Enter your ClassName"
+                    id=""
+                  />
+                )}
+
+                {/* image uplaod */}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "software" ||
+                  homeSubMenu === "overview" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career") && (
+                  <label for="fdesc">Image Upload:</label>
+                )}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "software" ||
+                  homeSubMenu === "overview" ||
+                  homeSubMenu === "feature" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career") && (
+                  <input
+                    class="form-control pt-2"
+                    type="file"
+                    name="imageURL"
+                    id=""
+                  />
+                )}
+
+                {/* Name */}
+                {(homeSubMenu === "team" || homeSubMenu === "teams") && (
+                  <label for="fbody"> Name:</label>
+                )}
+                {(homeSubMenu === "team" || homeSubMenu === "teams") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="name"
+                    placeholder="Enter your Name"
+                    id=""
+                  />
+                )}
+
+                {/* Designation */}
+                {(homeSubMenu === "team" || homeSubMenu === "teams") && (
+                  <label for="fbody"> Designation:</label>
+                )}
+                {(homeSubMenu === "team" || homeSubMenu === "teams") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="designation"
+                    placeholder="Enter your Designation"
+                    id=""
+                  />
+                )}
+
+                {/* Main Description */}
+                {homeSubMenu === "teams" && (
+                  <label for="fbody"> Main Description:</label>
+                )}
+                {homeSubMenu === "teams" && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="mainDescription"
+                    placeholder="Enter your Team Name"
+                    id=""
+                  />
+                )}
+
+                {/* Alt Tag */}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career") && (
+                  <label for="fdesc">Alt Tag</label>
+                )}
+                {(homeSubMenu === "heroBox" ||
+                  homeSubMenu === "service" ||
+                  homeSubMenu === "technologys" ||
+                  homeSubMenu === "team" ||
+                  homeSubMenu === "about" ||
+                  homeSubMenu === "services" ||
+                  homeSubMenu === "features" ||
+                  homeSubMenu === "technology" ||
+                  homeSubMenu === "ourtechnology" ||
+                  homeSubMenu === "teams" ||
+                  homeSubMenu === "experience" ||
+                  homeSubMenu === "career") && (
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="altTag"
+                    placeholder="Enter Alt Tag"
+                    id=""
+                  />
+                )}
               </div>
 
               <div class="modal-footer">
@@ -1368,6 +1671,7 @@ const AdminMain = ({
                   class="btn btn-success"
                   // data-bs-dismiss="modal"
                   type="submit"
+                  // onClick={addHere}
                 >
                   Add
                 </button>

@@ -10,8 +10,6 @@ const Login = () => {
   const [data, setData] = useState({});
   const API = "https://therapidhiredev.herokuapp.com";
   const [error, setError] = useState(null);
-  const [emailError] = useState(null);
-  const [passwordError] = useState(null);
 
   const LogInHandle = async (event) => {
     event.preventDefault();
@@ -35,8 +33,8 @@ const Login = () => {
           history.push(pathAdmin);
         } else {
         }
-        localStorage.setItem('myData',data.roleName);
-        window.location.reload()
+        localStorage.setItem("myData", data.roleName);
+        window.location.reload();
       })
       .catch(function (error) {
         setError(true);
