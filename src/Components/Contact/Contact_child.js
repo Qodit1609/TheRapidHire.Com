@@ -11,8 +11,8 @@ const Contact_child = () => {
   const [value, setValue] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
   console.log("Show the api url here===>>", apiUrl);
-  const [name, setName] = useState(null==0);
-  const [email, setEmail] = useState(null==0);
+  const [name, setName] = useState(null == 0);
+  const [email, setEmail] = useState(null == 0);
   const [message, setMessage] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,7 +106,6 @@ const Contact_child = () => {
                           placeholder="Name"
                           required
                           value={name || ""}
-
                           onChange={handleChange}
                         />
                       </div>
@@ -168,7 +167,9 @@ const Contact_child = () => {
                         <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
                         <span>
                           {" "}
-                          51, Electronic Complex, Pardesi Pura Main Road, Electronic Complex, Sukhlia, Indore, Madhya Pradesh 452007
+                          51, Electronic Complex, Pardesi Pura Main Road,
+                          Electronic Complex, Sukhlia, Indore, Madhya Pradesh
+                          452007
                         </span>
                       </div>
                     </div>
@@ -195,11 +196,7 @@ const Contact_child = () => {
                           <i class="fab fa-facebook"></i>
                         </a>
                       </li>
-                      <li>
-                        <a href="" target="_blank" rel="nofollow">
-                          <i class="fab fa-twitter"></i>
-                        </a>
-                      </li>
+
                       <li>
                         <a
                           href="https://www.linkedin.com/company/therapidhire/"
@@ -207,11 +204,6 @@ const Contact_child = () => {
                           rel="nofollow"
                         >
                           <i class="fab fa-linkedin"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" target="_blank" rel="nofollow">
-                          <i class="fab fa-instagram"></i>
                         </a>
                       </li>
                     </div>
