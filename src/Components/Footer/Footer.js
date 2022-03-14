@@ -87,6 +87,11 @@ const Footer = () => {
                           </li>
                         );
                       })}
+                      <br />
+                      <Link to="Refund_policy">
+                        <i className="fas fa-angle-right"></i>
+                        Refund_policy
+                      </Link>
                     </ul>
                   </div>
                 ))}

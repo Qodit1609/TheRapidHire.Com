@@ -12,7 +12,7 @@ import Career from "./Components/Career/Career";
 import Apply from "./Components/Apply/Apply";
 import Terms from "./Components/Terms/Terms";
 import Policy from "./Components/Policy/Policy";
-// import AdminMain from "./Admin/AdminMain";
+import Refund_policy from "./Components/Refund_policy/Refund_policy";
 import Login from "./Admin/Login";
 import axios from "axios";
 import Reset from "./Admin/Reset";
@@ -23,11 +23,10 @@ import HR_Dashboard from "./Admin/hr/HR_Dashboard";
 import SalesDashboard from "./Admin/sales/SalesDashboard";
 
 
-
 function App() {
   const [navBar, setNavBar] = useState(null);
   let [loaded, setLoaded] = useState(true);
-  const userRole = localStorage.getItem('myData')
+  const userRole = localStorage.getItem("myData");
   setTimeout(() => {
     setLoaded(false);
   }, 2000);
@@ -38,11 +37,9 @@ function App() {
       setNavBar(navBar);
     }
     getDataFromServer();
-  
   }, []);
   return (
     <div>
-     
       {loaded ? (
         <div className="loader">
           <div></div>
@@ -54,7 +51,11 @@ function App() {
           <Router>
             <Route exact path="/" component={HomePage}></Route>
             <Route exact path="/services" component={Services}></Route>
-            <Route exact path="/contact_child" component={Contact_child}></Route>
+            <Route
+              exact
+              path="/contact_child"
+              component={Contact_child}
+            ></Route>
             <Route exact path="/about" component={About}></Route>
             <Route path="/features" component={Features_Child}></Route>
             <Route exact path="/Team" component={Team_child}></Route>
@@ -62,17 +63,26 @@ function App() {
             <Route exact path="/apply" component={Apply}></Route>
             <Route exact path="/terms" component={Terms}></Route>
             <Route exact path="/policy" component={Policy}></Route>
-            <Route exact path="/technology"component={Technology_child}></Route>
-            <Route exact path="/login"component={Login}></Route>
-            <Route exact path="/reset"component={Reset}></Route>
-            <Route exact path="/forgot"component={Forgot}></Route>
-            <Route exact path="/otp"component={Otp}></Route>
+            <Route
+              exact
+              path="/technology"
+              component={Technology_child}
+            ></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/reset" component={Reset}></Route>
+            <Route exact path="/forgot" component={Forgot}></Route>
+            <Route exact path="/otp" component={Otp}></Route>
             <Route exact path="/admin/dashboard" component={Dashboard}></Route>
             <Route exact path="/hr" component={HR_Dashboard}></Route>
             <Route exact path="/sales" component={SalesDashboard}></Route>
-          </Router>    
-        </div>      
-   )}
+            <Route
+              exact
+              path="/Refund_policy"
+              component={Refund_policy}
+            ></Route>
+          </Router>
+        </div>
+      )}
     </div>
   );
 }
