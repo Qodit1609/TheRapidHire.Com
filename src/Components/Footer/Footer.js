@@ -90,7 +90,7 @@ const Footer = () => {
                       <br />
                       <Link to="Refund_policy">
                         <i className="fas fa-angle-right"></i>
-                        Refund_policy
+                        Return and Refund Policy
                       </Link>
                     </ul>
                   </div>

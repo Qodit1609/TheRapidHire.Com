@@ -10,7 +10,7 @@ const Refund_policy = () => {
       <div class="container">
         <div class="terms3">
           <div class="col-xs-12">
-            <h2>Refund Policy</h2>
+            <h2>Return and Refund Policy</h2>
             <br />
             <p>
               In certain cases and within certain limits, some amount may be
