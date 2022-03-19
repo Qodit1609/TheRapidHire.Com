@@ -113,11 +113,11 @@ const Contact = () => {
               data-wow-delay="300ms"
               data-wow-duration="1000ms"
             >
-              <div class="nio-eig-contact-img position-relative">
+              {/* <div class="nio-eig-contact-img position-relative">
                 <div class="nio-eig-contact-img-wrap">
                   <img src={addressMap} class="img-fluid" alt="" />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

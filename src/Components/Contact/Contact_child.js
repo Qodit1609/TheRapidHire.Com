@@ -209,7 +209,7 @@ const Contact_child = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                {/* <div class="col-lg-6">
                   <iframe
                     class="w-100 contact-ifream"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.834995446162!2d-106.94314568446521!3d44.78416917909886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f009b7255555%3A0xef97aa92cd680505!2s1309%20Coffeen%20Ave%20STE%201200%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sin!4v1632286156579!5m2!1sen!2sin"
@@ -218,7 +218,7 @@ const Contact_child = () => {
                     allowfullscreen=""
                     loading="lazy"
                   ></iframe>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
