@@ -168,8 +168,17 @@ const Contact_child = () => {
                         <span>
                           {" "}
                           51, Electronic Complex, Pardesi Pura Main Road,
-                          Electronic Complex, Sukhlia, Indore, Madhya Pradesh
+                          Electronic Complex, Sukhlia, INDORE(Madhya Pradesh)
                           452007
+                        </span>
+                      </div>
+                    </div>
+                    <div class="media pt-3">
+                      <div class="mr-3 contact-icon float-left">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                        <span>
+                          {" "}
+                          98, Rachna Nagar, Near Mohit Kirana, INDORE(Madhya Pradesh)452006
                         </span>
                       </div>
                     </div>
