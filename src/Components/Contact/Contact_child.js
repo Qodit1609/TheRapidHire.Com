@@ -178,7 +178,7 @@ const Contact_child = () => {
                         <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
                         <span>
                           {" "}
-                          98, Rachna Nagar, Near Mohit Kirana, INDORE(Madhya Pradesh)452006
+                          98, Archana  Nagar, Near Mohit Kirana, INDORE(Madhya Pradesh)452006
                         </span>
                       </div>
                     </div>
