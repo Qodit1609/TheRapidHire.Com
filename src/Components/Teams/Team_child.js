@@ -15,7 +15,7 @@ const Team_child = () => {
   const [value3, setValue3] = useState([]);
   const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+  // console.log("Show the api url here===>>", apiUrl);
 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
@@ -23,7 +23,7 @@ const Team_child = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("Show the data here===>", value);
+  // console.log("Show the data here===>", value);
 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/teams/").then((res) => {
@@ -31,7 +31,7 @@ const Team_child = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+  // console.log("second", data);
 
   useEffect(() => {
     axios
@@ -41,7 +41,7 @@ const Team_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data==>>>", value2);
+  // console.log("show the data==>>>", value2);
 
   useEffect(() => {
     axios
@@ -51,7 +51,7 @@ const Team_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data==>>>", value3);
+  // console.log("show the data==>>>", value3);
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/footerBanner")
@@ -60,7 +60,7 @@ const Team_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data", value1);
+  // console.log("show the data", value1);
   return (
     <div id="team_child">
       <Header />
@@ -111,43 +111,43 @@ const Team_child = () => {
                 </div>
               </div>
             </div>
+              <div className="container">
+                <div className="row">
+                  {value2 &&
+                    value2.slice(0, 3).map((value, index) => (
+                      <div className="col-md-4 mb-md-0 mb-3 pt-5">
+                        <div className="card d-flex flex-column align-items-center justify-content-center">
+                          <div className="inner-content d-flex flex-column align-items-center justify-content-center">
+                            <div className="img-container rounded-circle">
+                              <img src={value.image} className="rounded-circle" />
+                            </div>
+                            <div className="team-name">{value.name}</div>
+                            <p className="designation text-muted text-uppercase">
+                              {value.designation}
+                            </p>
+                          </div>
+                          <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
             <div className="container mt-5 mb-5">
               <div className="row">
                 {value2 &&
-                  value2.slice(3, 7).map((value, index) => (
-                    <div className="col-md-4 mb-md-0 mb-3">
+                  value2.slice(3, 9).map((value, index) => (
+                    <div className="col-md-4 mb-md-0 mb-3 pt-5">
                       <div className="card d-flex flex-column align-items-center justify-content-center">
                         <div className="inner-content d-flex flex-column align-items-center justify-content-center">
                           <div className="img-container rounded-circle">
                             <img src={value.image} className="rounded-circle" />
                           </div>
-                          <div className="h3">{value.name}</div>
-                          <p className="designation text-muted text-uppercase">
-                            {value.designation}
-                          </p>
-                        </div>
-                        <ul className="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
-                        </ul>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
-            <div className="container">
-              <div className="row">
-                {value2 &&
-                  value2.slice(0, 3).map((value, index) => (
-                    <div className="col-md-4 mb-md-0 mb-3">
-                      <div className="card d-flex flex-column align-items-center justify-content-center">
-                        <div className="inner-content d-flex flex-column align-items-center justify-content-center">
-                          <div className="img-container rounded-circle">
-                            <img src={value.image} className="rounded-circle" />
-                          </div>
-                          <div className="h3">{value.name}</div>
+                          <div className="team-name">{value.name}</div>
                           <p className="designation text-muted text-uppercase">
                             {value.designation}
                           </p>

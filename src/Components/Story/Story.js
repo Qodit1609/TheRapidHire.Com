@@ -13,7 +13,7 @@ const Story = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("first show the data=======>>>>>", data);
+  
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/serviceChild")
@@ -22,7 +22,7 @@ const Story = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second show the data==========>>>>>>>", value);
+  
 
   useEffect(() => {
     axios
@@ -32,7 +32,7 @@ const Story = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second show the data==========>>>>>>>", value2);
+ 
 
   // our service//
 
@@ -96,7 +96,7 @@ const Story = () => {
                           <div
                             className="col-lg-3 col-md-6 col-sm-6"
                             style={{ marginTop: "1rem" }}
-                            style={{ marginTop: "1rem" }}
+                           
                           >
                             <div className="serviceBox">
                               <div className="service-icon">

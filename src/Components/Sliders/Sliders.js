@@ -11,7 +11,7 @@ import mobileappdevelopment from "../../assets/images/sli6.jpg";
 const Sliders = () => {
   const [value, setValue] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+ 
 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
@@ -19,7 +19,7 @@ const Sliders = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+
 
   return (
     <div id="slide-main">

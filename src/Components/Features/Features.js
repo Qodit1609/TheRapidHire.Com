@@ -11,7 +11,7 @@ const Features = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+  
   return (
     <div id="features">
        {data &&

@@ -37,29 +37,7 @@ const Contact = () => {
         : null
     );
   };
-    // const whiteText = {
-    //   color: "white",
-    // };
 
-  // function sendEmail(e) {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(
-  //       "service_nla3o8q",
-  //       "template_k2gyn8q",
-  //       e.target,
-  //       "user_rbaFUyv8MppoyJZo9AxOz"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log("Email successfully sent!", result.text);
-  //       },
-  //       (error) => {
-  //         console.log("Email not sent!", error);
-  //       }
-  //     );
-  //   e.target.reset();
-  // }
   return (
     <div id="contact">
        <ToastContainer

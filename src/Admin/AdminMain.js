@@ -62,10 +62,10 @@ const AdminMain = ({
 
   const onSubmit = (event) => {
     event.preventDefault(event);
-    console.log(img);
+    // console.log(img);
     const form = event.target;
-    console.log(event);
-    console.log("submitted form: ", form);
+    // console.log(event);
+    // console.log("submitted form: ", form);
     // console.log(event.target.files[0]);
     let finalObj = {};
 
@@ -98,7 +98,7 @@ const AdminMain = ({
     //   }
     // }
 
-    console.log("finalObj:", finalObj);
+    // console.log("finalObj:", finalObj);
 
     let bodyFormData = new FormData(); //formdata object
     // bodyFormData.append("title", form.title.value); //append the values with key, value pair
@@ -109,7 +109,7 @@ const AdminMain = ({
 
 
     Object.keys(finalObj).map((key, index) => {
-      console.log(index, key, finalObj[key]);
+      // console.log(index, key, finalObj[key]);
       bodyFormData.append(key, finalObj[key]);
     });
 
@@ -137,10 +137,10 @@ const AdminMain = ({
       data:bodyFormData,
     })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -323,12 +323,12 @@ const AdminMain = ({
 
   const showItemsIntable = (name) => {
     setHomeSubMenu(name);
-    console.log("homesub", homeSubMenu);
+    // console.log("homesub", homeSubMenu);
     setselectedMenuItemName(name);
     if (name === "navBar") {
       setHeads(["ID", "Title", "Action"]);
       setAdminShowDataProps(navBar);
-      console.log("navBar Heads: ", Heads);
+      // console.log("navBar Heads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -348,7 +348,7 @@ const AdminMain = ({
     } else if (name === "heroBox") {
       setHeads(heroBoxHeads);
       setAdminShowDataProps(heroBox);
-      console.log("heroBox Heads: ", Heads);
+      // console.log("heroBox Heads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -372,7 +372,7 @@ const AdminMain = ({
     } else if (name === "story") {
       setHeads(storyHeads);
       setAdminShowDataProps(story);
-      console.log("story Heads: ", Heads);
+      // console.log("story Heads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -394,10 +394,10 @@ const AdminMain = ({
         Maindescription: false,
       });
     } else if (name === "service") {
-      console.log(name);
+      // console.log(name);
       setHeads(serviceHeads);
       setAdminShowDataProps(service);
-      console.log("serviceHeads: ", Heads);
+      // console.log("serviceHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -421,7 +421,7 @@ const AdminMain = ({
     } else if (name === "technologys") {
       setHeads(technologysHeads);
       setAdminShowDataProps(technologys);
-      console.log("technologysHeads: ", Heads);
+      // console.log("technologysHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -444,7 +444,7 @@ const AdminMain = ({
     } else if (name === "software") {
       setHeads(softwareHeads);
       setAdminShowDataProps(software);
-      console.log("softwareHeads: ", Heads);
+      // console.log("softwareHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -468,7 +468,7 @@ const AdminMain = ({
     } else if (name === "overview") {
       setHeads(overviewHeads);
       setAdminShowDataProps(overview);
-      console.log("overviewHeads: ", Heads);
+      // console.log("overviewHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -492,7 +492,7 @@ const AdminMain = ({
     } else if (name === "feature") {
       setHeads(featureHeads);
       setAdminShowDataProps(feature);
-      console.log("featureHeads: ", Heads);
+      // console.log("featureHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -516,7 +516,7 @@ const AdminMain = ({
     } else if (name === "trusted") {
       setHeads(trustedHeads);
       setAdminShowDataProps(trusted);
-      console.log("trustedHeads: ", Heads);
+      // console.log("trustedHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -540,7 +540,7 @@ const AdminMain = ({
     } else if (name === "team") {
       setHeads(teamHeads);
       setAdminShowDataProps(team);
-      console.log("teamHeads: ", Heads);
+      // console.log("teamHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -564,7 +564,7 @@ const AdminMain = ({
     } else if (name === "footercontact") {
       setHeads(footerHeads);
       setAdminShowDataProps(footercontact);
-      console.log("footerHeads: ", Heads);
+      // console.log("footerHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -588,7 +588,7 @@ const AdminMain = ({
     } else if (name === "about") {
       setHeads(aboutHeads);
       setAdminShowDataProps(about);
-      console.log("aboutHeads: ", Heads);
+      // console.log("aboutHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -612,7 +612,7 @@ const AdminMain = ({
     } else if (name === "services") {
       setHeads(servicesHeads);
       setAdminShowDataProps(services);
-      console.log("servcesHeads: ", Heads);
+      // console.log("servcesHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -636,7 +636,7 @@ const AdminMain = ({
     } else if (name === "features") {
       setHeads(featuresHeads);
       setAdminShowDataProps(features);
-      console.log("featuresHeads: ", Heads);
+      // console.log("featuresHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -660,7 +660,7 @@ const AdminMain = ({
     } else if (name === "technology") {
       setHeads(technologyHeads);
       setAdminShowDataProps(technology);
-      console.log("technologyHeads: ", Heads);
+      // console.log("technologyHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -684,7 +684,7 @@ const AdminMain = ({
     } else if (name === "ourtechnology") {
       setHeads(ourtechnologyHeads);
       setAdminShowDataProps(ourtechnology);
-      console.log("ourtechnologyHeads: ", Heads);
+      // console.log("ourtechnologyHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -711,7 +711,7 @@ const AdminMain = ({
     } else if (name === "teams") {
       setHeads(teamsHeads);
       setAdminShowDataProps(teams);
-      console.log("teamsHeads: ", Heads);
+      // console.log("teamsHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -735,7 +735,7 @@ const AdminMain = ({
     } else if (name === "career") {
       setHeads(careerHeads);
       setAdminShowDataProps(career);
-      console.log("careerHeads: ", Heads);
+      // console.log("careerHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -762,7 +762,7 @@ const AdminMain = ({
     } else if (name === "companyperks") {
       setHeads(companyperksHeads);
       setAdminShowDataProps(companyperks);
-      console.log("companyperksHeads: ", Heads);
+      // console.log("companyperksHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -787,7 +787,7 @@ const AdminMain = ({
     } else if (name === "excited") {
       setHeads(excitedHeads);
       setAdminShowDataProps(excited);
-      console.log("excitedrHeads: ", Heads);
+      // console.log("excitedrHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -812,7 +812,7 @@ const AdminMain = ({
     } else if (name === "experience") {
       setHeads(experienceHeads);
       setAdminShowDataProps(experience);
-      console.log("experienceHeads: ", Heads);
+      // console.log("experienceHeads: ", Heads);
       setCols({
         ID: true,
         Title: true,
@@ -838,7 +838,7 @@ const AdminMain = ({
       // setSoft_ware(false)
     }
 
-    console.log("adminShowDataProps: ", adminShowDataProps);
+    // console.log("adminShowDataProps: ", adminShowDataProps);
   };
 
   const deleteFunction = (id) => {
@@ -855,10 +855,10 @@ const AdminMain = ({
     })
       .then((response) => {
         window.location.reload(false);
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 

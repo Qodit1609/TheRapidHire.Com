@@ -9,7 +9,7 @@ const Forgot = () => {
   const [email, setEmail] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("data", value);
+    // console.log("data", value);
   }, []);
 
   const forgotPassword = () => {

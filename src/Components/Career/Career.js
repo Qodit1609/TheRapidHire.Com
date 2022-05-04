@@ -19,15 +19,14 @@ const Career = () => {
   const [isMern, setIsMern] = useState("none");
   const [isMean, setIsMean] = useState("none");
 
-  console.log("Show the api url here===>>", apiUrl);
-
+ 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
       setValue(resp.data);
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+ 
 
   useEffect(() => {
     axios
@@ -37,7 +36,7 @@ const Career = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+  
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/excitedWorkUs")
@@ -46,7 +45,7 @@ const Career = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show data===>>>>", value1);
+  
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/companyPerk")
@@ -55,7 +54,6 @@ const Career = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the companyparks==>>>", value2);
 
   useEffect(() => {
     if (value1?.profileName == "Java Developer") {

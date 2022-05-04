@@ -14,7 +14,7 @@ const About = () => {
   const [value, setValue] = useState([]);
   const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+  // console.log("Show the api url here===>>", apiUrl);
 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
@@ -23,7 +23,7 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+  // console.log("Show the data here===>>>>>>>>>>>>", value);
 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/about/").then((res) => {
@@ -31,7 +31,7 @@ const About = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+  // console.log("second", data);
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/footerBanner")
@@ -40,7 +40,7 @@ const About = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data", value1);
+  // console.log("show the data", value1);
   return (
     <div id="about">
       <Header />

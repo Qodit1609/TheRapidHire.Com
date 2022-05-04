@@ -13,8 +13,8 @@ const Login = () => {
 
   const LogInHandle = async (event) => {
     event.preventDefault();
-    if (!email.toString().trim().length) return console.log("enter email");
-    if (!password) return console.log("enter password");
+    if (!email.toString().trim().length) return ;
+    if (!password) return ;
 
     let loginApi = await axios
       .post(`${API}/api/auth/login`, { email, password })
@@ -38,7 +38,7 @@ const Login = () => {
       })
       .catch(function (error) {
         setError(true);
-        console.log("invalid username or password");
+        // console.log("invalid username or password");
         return Promise.reject(error);
       });
   };

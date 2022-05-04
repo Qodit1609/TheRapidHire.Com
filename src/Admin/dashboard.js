@@ -39,7 +39,7 @@ const Dashboard = () => {
       }
       const { data: navBar } = await axios.get(`${API}/navbar/`);
       setNavBar(navBar);
-      console.log("navBar: ", navBar);
+      // console.log("navBar: ", navBar);
       const { data: heroBox } = await axios.get(`${API}/banner/`);
       setHerobox(heroBox);
       const { data: story } = await axios.get(`${API}/Home/`);

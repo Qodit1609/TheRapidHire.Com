@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Contact_child = () => {
   const [value, setValue] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+ 
   const [name, setName] = useState(null == 0);
   const [email, setEmail] = useState(null == 0);
   const [message, setMessage] = useState("");
@@ -48,7 +48,7 @@ const Contact_child = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+
 
   return (
     <div id="contact_child">
@@ -155,7 +155,7 @@ const Contact_child = () => {
                   <div class="iq-address mt-3">
                     <div class="media ">
                       <div class="mr-3 contact-icon float-left">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <span>
                           1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801
                           USA
@@ -164,34 +164,31 @@ const Contact_child = () => {
                     </div>
                     <div class="media pt-3">
                       <div class="mr-3 contact-icon float-left">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <span>
-                          {" "}
-                          51, Electronic Complex, Pardesi Pura Main Road,
-                          Electronic Complex, Sukhlia, INDORE(Madhya Pradesh)
+                          51, Electronic Complex, Pardesi Pura Main Road, INDORE(M.P)
                           452007
                         </span>
                       </div>
                     </div>
                     <div class="media pt-3">
                       <div class="mr-3 contact-icon float-left">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <span>
-                          {" "}
-                          98, Archana  Nagar, Near Mohit Kirana, INDORE(Madhya Pradesh)452006
+                          98, Archana  Nagar, Near Mohit Kirana, INDORE(M.P) 452006
                         </span>
                       </div>
                     </div>
                     <div class="media pt-3">
                       <div class="mr-3 contact-icon float-left">
-                        <i class="fas fa-envelope "></i>{" "}
+                        <i class="fas fa-envelope "></i>
                         <span>sales@therapidhire.com</span>
                       </div>
                     </div>
 
                     <div class="media pt-3">
                       <div class="mr-3 contact-icon float-left">
-                        <i class="fa fa-phone"></i>{" "}
+                        <i class="fa fa-phone"></i>
                         <span>+1 (917) 628 2406</span>
                       </div>
                     </div>

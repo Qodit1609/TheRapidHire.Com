@@ -36,7 +36,7 @@ const Technology_child = () => {
   const [value1, setValue1] = useState([]);
 
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+  
 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
@@ -45,7 +45,7 @@ const Technology_child = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+ 
 
   useEffect(() => {
     axios
@@ -55,7 +55,7 @@ const Technology_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+ 
 
   useEffect(() => {
     axios
@@ -65,7 +65,7 @@ const Technology_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("Show the data", content);
+  // console.log("Show the data", content);
   useEffect(() => {
     axios
       .get("https://therapidhiredev.herokuapp.com/footerBanner")
@@ -74,7 +74,7 @@ const Technology_child = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data", value1);
+ 
   return (
     <div id="technology_child">
       <Header />

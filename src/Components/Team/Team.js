@@ -28,7 +28,7 @@ const Team = () => {
             <p>{data1.description}</p>
             <Carousel breakPoints={breakPoints}>
               {data &&
-                data.slice(0, 7).map((value, index) => (
+                data.slice(0, 9).map((value, index) => (
                   <div className="card-wrapper">
                     <div className="card">
                       <div className="card-image">

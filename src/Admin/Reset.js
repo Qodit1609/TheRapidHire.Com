@@ -10,7 +10,7 @@ export default function Reset() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("data", value);
+    // console.log("data", value);
     const username = JSON.parse(localStorage.getItem("user-info"));
     if (username !== null) {
       if (localStorage.getItem("user-info")) {

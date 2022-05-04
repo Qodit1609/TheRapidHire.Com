@@ -26,7 +26,7 @@ const HR_Dashboard = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <div id="hr">

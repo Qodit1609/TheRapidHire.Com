@@ -13,7 +13,7 @@ const Features_Child = () => {
   const [value, setValue] = useState([]);
   const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+
 
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
@@ -22,7 +22,7 @@ const Features_Child = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log("Show the data here===>>>>>>>>>>>>", value);
+
 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/feature/").then((res) => {
@@ -30,14 +30,14 @@ const Features_Child = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+ 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/footerBanner").then((res) => {
       setValue1(res.data);
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data", value1);
+
   return (
     <div id="fech">
       <Header />

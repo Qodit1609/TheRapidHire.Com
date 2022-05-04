@@ -13,8 +13,7 @@ const Services = () => {
   const [value, setValue] = useState([]);
   const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
-
+  
   useEffect(() => {
     axios.get(`${apiUrl}/banner/`).then((resp) => {
       setValue(resp.data);
@@ -22,22 +21,20 @@ const Services = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log("Show the data here===>>>>>>>>>>>>", value);
-
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/service").then((res) => {
       setData(res.data);
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+ 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/footerBanner").then((res) => {
       setValue1(res.data);
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("show the data", value1);
+ 
 
   return (
     <div id="services">

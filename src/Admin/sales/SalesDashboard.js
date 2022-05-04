@@ -26,7 +26,7 @@ const SalesDashboard = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("data", data);
+  // console.log("data", data);
   return (
     <div id="sales">
       <div class="dashboard-header">

@@ -14,7 +14,7 @@ const Policy = () => {
       });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+ 
   return (
     <div id="policy">
       <Header />

@@ -13,7 +13,7 @@ const LifeCycle = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("first", data);
+  
   return (
     <div id="lifecycle">
       {data &&

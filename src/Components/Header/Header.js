@@ -12,7 +12,7 @@ const Header = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second", data);
+  
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       {data &&

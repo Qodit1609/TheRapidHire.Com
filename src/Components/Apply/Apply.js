@@ -9,7 +9,7 @@ const Apply = (props) => {
   const [value, setValue] = useState([]);
   const [value1, setValue1] = useState([]);
   const apiUrl = "https://therapidhiredev.herokuapp.com";
-  console.log("Show the api url here===>>", apiUrl);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setMobile] = useState("");
@@ -28,7 +28,7 @@ const Apply = (props) => {
   const [profileType, profileTypeVal] = useState([]);
 
   async function applynow() {
-    console.warn(name, email, phone_number, technology, description, upload);
+    // console.warn(name, email, phone_number, technology, description, upload);
     const formData = {
       name,
       email,

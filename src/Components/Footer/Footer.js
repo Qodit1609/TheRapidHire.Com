@@ -11,7 +11,7 @@ const Footer = () => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("second===>>>>>>", data);
+ 
   useEffect(() => {
     axios.get("https://therapidhiredev.herokuapp.com/copyRight").then((res) => {
       setValue(res.data);
