@@ -115,7 +115,7 @@ const Team_child = () => {
                 <div className="row">
                   {value2 &&
                     value2.slice(0, 3).map((value, index) => (
-                      <div className="col-md-4 mb-md-0 mb-3 pt-5">
+                      <div className="col-md-4 mb-md-0 mb-2 pt-3">
                         <div className="card d-flex flex-column align-items-center justify-content-center">
                           <div className="inner-content d-flex flex-column align-items-center justify-content-center">
                             <div className="img-container rounded-circle">
@@ -137,7 +137,7 @@ const Team_child = () => {
                     ))}
                 </div>
               </div>
-            <div className="container mt-5 mb-5">
+            <div className="container mb-5">
               <div className="row">
                 {value2 &&
                   value2.slice(3, 9).map((value, index) => (
